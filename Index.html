@@ -1,0 +1,3262 @@
+<!DOCTYPE html>
+<!-- saved from url=(0153)file:///Users/matthewhayde/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/953FE968-8F12-437A-9CC7-5F496F7868A1/gender_equality_course-3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gender Equality in Hiring &amp; Promotion | Corporate eLearning</title>
+
+<style>
+/* ========= CSS VARIABLES ========= */
+:root {
+  --navy: #1C3A6E;
+  --navy-mid: #2B5190;
+  --blue: #4A86C8;
+  --blue-light: #6DA8E0;
+  --gold: #E07A96;
+  --gold-light: #F0A3B8;
+  --rose: #E07A96;
+  --rose-light: #F0A3B8;
+  --cream: #F4F8FF;
+  --white: #FFFFFF;
+  --gray-50: #F8F9FA;
+  --gray-100: #EAEDF2;
+  --gray-200: #D0D6E2;
+  --gray-400: #8A96AB;
+  --gray-600: #4A5568;
+  --gray-800: #1E2D3D;
+  --success: #2D9B6F;
+  --warning: #E07B39;
+  --sidebar-w: 280px;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(15,32,68,0.10);
+  --shadow-lg: 0 8px 40px rgba(15,32,68,0.16);
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ========= RESET & BASE ========= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-800);
+  background: var(--cream);
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ========= SIDEBAR ========= */
+#sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--navy);
+  position: fixed;
+  top: 0; left: 0;
+  display: block;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-brand {
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(224,122,150,0.15);
+  border: 1px solid rgba(224,122,150,0.3);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.brand-title {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 17px;
+  color: var(--white);
+  line-height: 1.3;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--gray-400);
+  margin-top: 4px;
+  font-weight: 300;
+}
+
+/* Progress bar in sidebar */
+.sidebar-progress {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--gray-400);
+  margin-bottom: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.progress-track {
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--gold-light));
+  border-radius: 2px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+/* Nav menu */
+.nav-section {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gray-400);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0 24px 8px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.6);
+  font-size: 13.5px;
+  font-weight: 400;
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+.nav-item:hover { color: var(--white); background: rgba(255,255,255,0.04); }
+.nav-item.active {
+  color: var(--white);
+  background: rgba(224,122,150,0.12);
+  border-left-color: var(--gold);
+  font-weight: 500;
+}
+.nav-item.completed { color: var(--success); }
+.nav-item.locked { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.nav-item.active .nav-icon { background: var(--gold); color: var(--navy); }
+.nav-item.completed .nav-icon { background: var(--success); color: var(--white); }
+
+/* ECCSR badges in sidebar footer */
+.sidebar-footer {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.eccsr-row {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.eccsr-pill {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 10px;
+  color: var(--white);
+}
+.eccsr-e { background: #2563EB; }
+.eccsr-c1 { background: #059669; }
+.eccsr-c2 { background: #7C3AED; }
+.eccsr-s { background: #4A86C8; }
+.eccsr-r { background: #DC2626; }
+
+.sdg-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.sdg-pill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 1px solid;
+}
+.sdg-5 { color: #E07A96; border-color: #E07A96; background: rgba(224,122,150,0.1); }
+.sdg-16 { color: #009EDB; border-color: #009EDB; background: rgba(0,158,219,0.08); }
+.sidebar-footer-label {
+  font-size: 10px;
+  color: var(--gray-400);
+  margin-bottom: 6px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ========= MAIN CONTENT ========= */
+#main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Mobile toggle */
+#menu-toggle {
+  display: none;
+  position: fixed;
+  top: 16px; left: 16px;
+  z-index: 200;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  width: 44px; height: 44px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+/* ========= SECTIONS ========= */
+.course-section {
+  display: none;
+  padding: 48px 56px;
+  max-width: 900px;
+  animation: fadeIn 0.4s ease;
+}
+.course-section.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========= HERO / INTRO ========= */
+.hero-section {
+  background: linear-gradient(135deg, #1C3A6E 0%, #2B5190 60%, #3A68B0 100%);
+  padding: 80px 56px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(224,122,150,0.06);
+  pointer-events: none;
+}
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: 30%;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(217,95,122,0.05);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(224,122,150,0.15);
+  border: 1px solid rgba(224,122,150,0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 44px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.hero-title span { color: var(--gold-light); }
+.hero-desc {
+  font-size: 17px;
+  color: rgba(255,255,255,0.75);
+  max-width: 580px;
+  margin-bottom: 36px;
+  font-weight: 300;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+.hero-meta-item strong { color: var(--white); font-weight: 600; }
+
+.hero-sdg {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+.sdg-badge {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  text-align: center;
+}
+.sdg-badge-num {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+.sdg-badge-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(224,122,150,0.3); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 22px;
+  border-radius: 8px;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-secondary:hover { background: var(--blue); color: var(--white); }
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+
+/* ========= VIDEO EMBED ========= */
+.video-block {
+  background: var(--gray-800);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 32px 0;
+  position: relative;
+  aspect-ratio: 16/9;
+  border: 2px dashed rgba(224,122,150,0.4);
+}
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1C3A6E 0%, #2B5190 100%);
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  padding: 32px;
+}
+.video-play-btn {
+  width: 64px; height: 64px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--navy);
+  margin-bottom: 16px;
+  box-shadow: 0 0 0 12px rgba(224,122,150,0.15);
+}
+.video-placeholder h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.video-placeholder p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+/* Actual video/iframe */
+.video-block iframe, .video-block video {
+  width: 100%; height: 100%; border: none; position: absolute; inset: 0;
+}
+
+/* ========= SECTION HEADERS ========= */
+.section-header {
+  margin-bottom: 36px;
+}
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 20px; height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+.section-title {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 32px;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.section-subtitle {
+  font-size: 16px;
+  color: var(--gray-600);
+  max-width: 600px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+/* Timing chip */
+.timing-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(30,95,173,0.08);
+  border: 1px solid rgba(30,95,173,0.15);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 24px;
+}
+
+/* ========= CARDS ========= */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+  border: 1px solid var(--gray-100);
+}
+.card-accent {
+  border-left: 4px solid var(--gold);
+}
+.card-blue {
+  border-left: 4px solid var(--blue);
+}
+.card-rose {
+  border-left: 4px solid var(--rose);
+}
+
+/* Key finding box */
+.finding-box {
+  background: linear-gradient(135deg, #EBF5FF 0%, #F0F8FF 100%);
+  border: 1px solid rgba(30,95,173,0.15);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin: 20px 0;
+}
+.finding-box h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.finding-box p, .finding-box li { font-size: 14.5px; color: var(--gray-800); }
+.finding-box ul { padding-left: 20px; }
+.finding-box li { margin-bottom: 6px; }
+
+/* Stat row */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-top: 3px solid var(--blue);
+}
+.stat-card.blue-top { border-top-color: var(--blue); }
+.stat-card.rose-top { border-top-color: var(--rose); }
+.stat-num {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 36px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.stat-desc {
+  font-size: 12.5px;
+  color: var(--gray-600);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* Theory grid */
+.theory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.theory-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-100);
+  border-top: 3px solid var(--blue);
+  transition: var(--transition);
+}
+.theory-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.theory-card h4 {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 16px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.theory-card p { font-size: 13.5px; color: var(--gray-600); line-height: 1.6; }
+
+/* ========= ACCORDION ========= */
+.accordion-item {
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  cursor: pointer;
+  background: var(--white);
+  transition: var(--transition);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--navy);
+  user-select: none;
+}
+.accordion-header:hover { background: var(--gray-50); }
+.accordion-header.open { background: #F0F6FF; color: var(--blue); }
+.accordion-icon {
+  font-size: 18px;
+  color: var(--gray-400);
+  transition: transform 0.3s;
+}
+.accordion-header.open .accordion-icon { transform: rotate(45deg); color: var(--blue); }
+.accordion-body {
+  display: none;
+  padding: 0 24px 22px;
+  background: var(--white);
+  font-size: 14.5px;
+  color: var(--gray-800);
+  line-height: 1.75;
+}
+.accordion-body.open { display: block; }
+
+/* ========= QUIZ ========= */
+.quiz-container {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin: 28px 0;
+}
+.quiz-header {
+  background: linear-gradient(135deg, #1C3A6E, #2B5190);
+  padding: 24px 32px;
+  color: var(--white);
+}
+.quiz-header h3 {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.quiz-header p { font-size: 13px; color: rgba(255,255,255,0.65); }
+.quiz-body { padding: 28px 32px; }
+
+.quiz-question {
+  margin-bottom: 28px;
+}
+.quiz-question h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.quiz-q-num {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--gray-100);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 14px;
+}
+.quiz-option:hover { border-color: var(--blue-light); background: #F5F9FF; }
+.quiz-option.selected { border-color: var(--blue); background: #EEF5FF; }
+.quiz-option.correct { border-color: var(--success); background: #F0FBF5; color: var(--success); }
+.quiz-option.wrong { border-color: var(--rose); background: #FFF0F3; color: var(--rose); }
+.quiz-option-marker {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--gray-200);
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+}
+.quiz-option.selected .quiz-option-marker { border-color: var(--blue); background: var(--blue); color: white; }
+.quiz-option.correct .quiz-option-marker { border-color: var(--success); background: var(--success); color: white; }
+.quiz-option.wrong .quiz-option-marker { border-color: var(--rose); background: var(--rose); color: white; }
+
+.quiz-feedback {
+  display: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  margin-top: 8px;
+  line-height: 1.55;
+}
+.quiz-feedback.show { display: block; }
+.quiz-feedback.correct-fb { background: #F0FBF5; border-left: 3px solid var(--success); color: #1D6B4A; }
+.quiz-feedback.wrong-fb { background: #FFF0F3; border-left: 3px solid var(--rose); color: #9B2040; }
+
+.quiz-submit {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: block;
+  margin-top: 16px;
+}
+.quiz-submit:hover { background: var(--navy); }
+
+.quiz-score-box {
+  display: none;
+  text-align: center;
+  padding: 32px;
+  background: linear-gradient(135deg, #F0F8FF, #E8F2FF);
+  border-radius: var(--radius);
+  margin-top: 24px;
+}
+.quiz-score-box.show { display: block; }
+.quiz-score-num {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 56px;
+  color: var(--navy);
+  font-weight: 700;
+}
+.quiz-score-label {
+  font-size: 14px;
+  color: var(--gray-600);
+  margin-top: 4px;
+}
+.quiz-score-msg {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+.quiz-score-msg.pass { color: var(--success); }
+.quiz-score-msg.fail { color: var(--rose); }
+
+/* ========= ECCSR FRAMEWORK ========= */
+.eccsr-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.eccsr-card {
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.eccsr-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.eccsr-letter {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.eccsr-word {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.eccsr-card.e-card { background: #EFF6FF; border: 2px solid #BFDBFE; }
+.eccsr-card.e-card .eccsr-letter, .eccsr-card.e-card .eccsr-word { color: #1D4ED8; }
+.eccsr-card.c1-card { background: #ECFDF5; border: 2px solid #A7F3D0; }
+.eccsr-card.c1-card .eccsr-letter, .eccsr-card.c1-card .eccsr-word { color: #065F46; }
+.eccsr-card.c2-card { background: #F5F3FF; border: 2px solid #DDD6FE; }
+.eccsr-card.c2-card .eccsr-letter, .eccsr-card.c2-card .eccsr-word { color: #5B21B6; }
+.eccsr-card.s-card { background: #FFFBEB; border: 2px solid #F9C5D3; }
+.eccsr-card.s-card .eccsr-letter, .eccsr-card.s-card .eccsr-word { color: #1E5FAD; }
+.eccsr-card.r-card { background: #FEF2F2; border: 2px solid #FECACA; }
+.eccsr-card.r-card .eccsr-letter, .eccsr-card.r-card .eccsr-word { color: #991B1B; }
+
+.eccsr-detail {
+  display: none;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-top: 16px;
+  border-top: 3px solid var(--gold);
+}
+.eccsr-detail.show { display: block; animation: fadeIn 0.3s ease; }
+
+/* ========= TABLE ========= */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+}
+.data-table th {
+  background: var(--navy);
+  color: var(--white);
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+.data-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+.data-table tr:nth-child(even) td { background: var(--gray-50); }
+.data-table tr:hover td { background: #EEF5FF; }
+
+/* ========= FUNNEL VISUAL ========= */
+.funnel-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 24px 0;
+}
+.funnel-step {
+  border-radius: 8px;
+  padding: 14px 24px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.funnel-step .pct {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 22px;
+  font-weight: 700;
+}
+.f1 { width: 100%; background: #2B5190; }
+.f2 { width: 88%; background: #4A86C8; }
+.f3 { width: 76%; background: #6DA8E0; }
+.f4 { width: 62%; background: #E07A96; }
+.f5 { width: 48%; background: #F0A3B8; }
+
+/* ========= CASE STUDY ========= */
+.case-study-box {
+  background: linear-gradient(135deg, var(--navy) 0%, #1A3260 100%);
+  border-radius: var(--radius);
+  padding: 32px;
+  color: var(--white);
+  margin: 28px 0;
+  position: relative;
+  overflow: hidden;
+}
+.case-study-box::before {
+  content: '"';
+  position: absolute;
+  top: -20px; right: 24px;
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 160px;
+  color: rgba(224,122,150,0.08);
+  line-height: 1;
+  pointer-events: none;
+}
+.case-study-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+.case-study-box h3 {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.case-study-box p {
+  font-size: 14.5px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.75;
+}
+
+/* ========= ACTION PLAN ========= */
+.action-plan-form { margin: 24px 0; }
+.form-group { margin-bottom: 20px; }
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: var(--gray-800);
+  background: var(--white);
+  transition: var(--transition);
+  appearance: none;
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(30,95,173,0.1);
+}
+.form-textarea { min-height: 90px; resize: vertical; }
+
+/* ========= CERTIFICATE ========= */
+.certificate-box {
+  background: linear-gradient(135deg, #F4F8FF 0%, #EBF2FF 100%);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.certificate-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 6px solid transparent;
+  border-radius: 16px;
+  background: linear-gradient(45deg, var(--gold), transparent, var(--gold)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.cert-ornament {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.cert-title {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.cert-main {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 36px;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.cert-name-line {
+  border-bottom: 2px solid var(--navy);
+  width: 300px;
+  margin: 16px auto;
+  padding-bottom: 8px;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-style: italic;
+  color: var(--navy);
+}
+.cert-for { font-size: 14px; color: var(--gray-600); margin-bottom: 8px; }
+.cert-course-name {
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  font-size: 18px;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+.cert-badges {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 20px 0;
+}
+.cert-badge-item { font-size: 12px; color: var(--gray-600); text-align: center; }
+.cert-badge-item strong { display: block; font-size: 13px; color: var(--navy); margin-top: 2px; }
+
+/* ========= GROUP PROJECT ========= */
+.deliverable-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+.deliverable-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.deliverable-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.deliverable-card p { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+
+/* ========= LEARNING OUTCOMES LIST ========= */
+.outcomes-list {
+  list-style: none;
+  margin: 16px 0;
+}
+.outcomes-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 14.5px;
+  color: var(--gray-800);
+}
+.outcomes-list li:last-child { border-bottom: none; }
+.outcome-check {
+  width: 22px; height: 22px;
+  background: rgba(45,155,111,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--success);
+  font-weight: 700;
+}
+
+/* ========= SECTION NAV ========= */
+.section-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-top: 48px;
+  border-top: 1px solid var(--gray-100);
+}
+.section-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 1.5px solid var(--gray-200);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.section-nav-btn:hover { border-color: var(--blue); color: var(--blue); }
+.section-nav-btn.next-btn {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+.section-nav-btn.next-btn:hover { background: var(--navy); border-color: var(--navy); }
+
+/* ========= DIAGNOSTIC QUIZ INTRO ========= */
+.diagnostic-intro {
+  background: linear-gradient(135deg, #F0F6FF, #E8F2FF);
+  border: 1px solid rgba(224,122,150,0.3);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 20px 0;
+}
+
+/* ========= HIGHLIGHT / QUOTE ========= */
+.pull-quote {
+  border-left: 4px solid var(--gold);
+  padding: 16px 24px;
+  margin: 24px 0;
+  background: rgba(224,122,150,0.04);
+  font-size: 17px;
+  font-style: italic;
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif; font-weight: 700;
+  line-height: 1.65;
+}
+.pull-quote cite {
+  display: block;
+  font-size: 13px;
+  color: var(--gray-600);
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 900px) {
+  #sidebar { transform: translateX(-100%); }
+  #sidebar.open { transform: translateX(0); }
+  #main { margin-left: 0; }
+  #menu-toggle { display: flex; align-items: center; justify-content: center; }
+  .course-section { padding: 60px 24px 32px; }
+  .hero-section { padding: 72px 24px 48px; }
+  .hero-title { font-size: 32px; }
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .theory-grid { grid-template-columns: 1fr; }
+  .eccsr-grid { grid-template-columns: repeat(3, 1fr); }
+  .deliverable-grid { grid-template-columns: 1fr; }
+  .funnel-step { width: 100% !important; }
+}
+@media (max-width: 600px) {
+  .hero-title { font-size: 26px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .eccsr-grid { grid-template-columns: repeat(2, 1fr); }
+  .certificate-box { padding: 28px 16px; }
+  .quiz-header, .quiz-body { padding: 20px; }
+}
+
+/* Print friendly */
+@media print {
+  #sidebar { display: none; }
+  #main { margin-left: 0; }
+  .section-nav { display: none; }
+  .course-section { display: block !important; padding: 24px; page-break-after: always; }
+}
+
+/* Overlay for mobile sidebar */
+#sidebar-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+#sidebar-overlay.show { display: block; }
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin: 2px;
+}
+.tag-blue { background: #EEF5FF; color: var(--blue); border: 1px solid #BFDBFE; }
+.tag-gold { background: #F0F6FF; color: var(--gold); border: 1px solid #F9C5D3; }
+.tag-rose { background: #FFF0F3; color: var(--rose); border: 1px solid #FECACA; }
+.tag-green { background: #F0FBF5; color: var(--success); border: 1px solid #A7F3D0; }
+</style>
+</head>
+<body>
+
+<!-- Mobile overlay -->
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- Mobile toggle -->
+<button id="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+
+<!-- ========= SIDEBAR ========= -->
+<nav id="sidebar" aria-label="Course navigation">
+  <div class="sidebar-brand">
+    <div class="brand-badge">⚖️ Corporate eLearning</div>
+    <div class="brand-title">Gender Equality in Hiring &amp; Promotion</div>
+    <div class="brand-sub">UCD Smurfit · BMGT43680 · 2026</div>
+  </div>
+
+  <div class="sidebar-progress">
+    <div class="progress-label">
+      <span>Course Progress</span>
+      <span id="progress-pct">7%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width: 7%;"></div>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Start Here</div>
+    <div class="nav-item active" onclick="goTo(&#39;intro&#39;)" id="nav-intro">
+      <div class="nav-icon">▶</div> Welcome &amp; Overview
+    </div>
+
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Module 1 · 10–12 min</div>
+    <div class="nav-item" onclick="goTo(&#39;m1&#39;)" id="nav-m1">
+      <div class="nav-icon">1</div> Theoretical Foundations
+    </div>
+    <div class="nav-item" onclick="goTo(&#39;m1quiz&#39;)" id="nav-m1quiz">
+      <div class="nav-icon">?</div> Module 1 Quiz
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Module 2 · 10–12 min</div>
+    <div class="nav-item" onclick="goTo(&#39;m2&#39;)" id="nav-m2">
+      <div class="nav-icon">2</div> Structural Bias
+    </div>
+    <div class="nav-item" onclick="goTo(&#39;m2quiz&#39;)" id="nav-m2quiz">
+      <div class="nav-icon">?</div> Module 2 Quiz
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Module 3 · 10–12 min</div>
+    <div class="nav-item" onclick="goTo(&#39;m3&#39;)" id="nav-m3">
+      <div class="nav-icon">3</div> Governance &amp; Tools
+    </div>
+    <div class="nav-item" onclick="goTo(&#39;m3quiz&#39;)" id="nav-m3quiz">
+      <div class="nav-icon">?</div> Module 3 Quiz
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Module 4 · 8–10 min</div>
+    <div class="nav-item" onclick="goTo(&#39;m4&#39;)" id="nav-m4">
+      <div class="nav-icon">4</div> Implementation &amp; Measurement
+    </div>
+    <div class="nav-item" onclick="goTo(&#39;m4quiz&#39;)" id="nav-m4quiz">
+      <div class="nav-icon">?</div> Module 4 Quiz
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-section-label">Module 5 · Group Project</div>
+    <div class="nav-item" onclick="goTo(&#39;m5&#39;)" id="nav-m5">
+      <div class="nav-icon">5</div> Group Consultancy Simulation
+    </div>
+    <div class="nav-item" onclick="goTo(&#39;action&#39;)" id="nav-action">
+      <div class="nav-icon">✎</div> Action Plan
+    </div>
+    <div class="nav-item" onclick="goTo(&#39;final&#39;)" id="nav-final">
+      <div class="nav-icon">★</div> Final Assessment
+    </div>
+    <div class="nav-item" onclick="goTo(&#39;cert&#39;)" id="nav-cert">
+      <div class="nav-icon">&#127942;</div> Certificate
+    </div>
+    <div class="nav-item" onclick="goTo(&#39;refs&#39;)" id="nav-refs">
+      <div class="nav-icon">&#128218;</div> References
+    </div>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-footer-label">ECCSR Framework</div>
+    <div class="eccsr-row">
+      <span class="eccsr-pill eccsr-e">E thical</span>
+      <span class="eccsr-pill eccsr-c1">C ollaboration</span>
+      <span class="eccsr-pill eccsr-c2">C reating</span>
+      <span class="eccsr-pill eccsr-s">S ustainable</span>
+      <span class="eccsr-pill eccsr-r">R esults</span>
+    </div>
+    <div class="sidebar-footer-label" style="margin-top:12px">UN SDGs</div>
+    <div class="sdg-pills">
+      <span class="sdg-pill sdg-5">SDG 5 · Gender Equality</span>
+      <span class="sdg-pill sdg-16">SDG 16 · Strong Institutions</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ========= MAIN ========= -->
+<div id="main">
+
+<!-- ====== INTRO / HERO ====== -->
+<section id="sec-intro" class="course-section active" style="padding:0; max-width:100%;">
+  <div class="hero-section">
+    <div class="hero-eyebrow">🏢 Corporate eLearning · 45–60 minutes</div>
+    <h1 class="hero-title">Gender Equality in<br><span>Hiring &amp; Promotion</span></h1>
+    <p class="hero-desc">An evidence-based course exploring how bias operates in talent processes - and what organisations can do about it. Grounded in academic research, real case studies, and the ECCSR framework.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">📚 <strong>5 Modules</strong></div>
+      <div class="hero-meta-item">🕐 <strong>45–60 min</strong></div>
+      <div class="hero-meta-item">&#10067; <strong>5 Module Quizzes</strong></div>
+      <div class="hero-meta-item">📄 <strong>Certificate on 70%+</strong></div>
+    </div>
+    <div class="hero-sdg">
+      <div class="sdg-badge">
+        <div class="sdg-badge-num">SDG 5</div>
+        <div class="sdg-badge-label">Gender Equality</div>
+      </div>
+      <div class="sdg-badge">
+        <div class="sdg-badge-num">SDG 16</div>
+        <div class="sdg-badge-label">Strong Institutions</div>
+      </div>
+    </div>
+
+    <!-- VIDEO 1: Welcome -->
+    <div style="padding:56.25% 0 0 0;position:relative;max-width:700px;margin-bottom:32px;">
+      <iframe src="https://player.vimeo.com/video/1186263002?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Course intro"></iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+    <div style="margin-bottom:24px;max-width:420px;">
+      <label style="display:block;color:rgba(255,255,255,0.85);font-size:14px;font-weight:600;margin-bottom:8px;">Enter your name to get started</label>
+      <input type="text" id="learner-name" placeholder="Your full name" style="width:100%;padding:12px 16px;border-radius:8px;border:2px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.12);color:#fff;font-size:15px;outline:none;box-sizing:border-box;" oninput="document.getElementById('start-btn').disabled=this.value.trim()===''">
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <button class="btn-primary" id="start-btn" onclick="startCourse()" disabled>Begin Course →</button>
+    </div>
+  </div>
+
+  <!-- Learning Outcomes -->
+  <div style="padding:48px 56px; max-width:900px;">
+    <div class="section-header">
+      <div class="section-eyebrow">Learning Outcomes</div>
+      <h2 class="section-title">By the end of this course, you will be able to:</h2>
+    </div>
+    <ul class="outcomes-list">
+      <li><span class="outcome-check">✓</span> Identify and explain the key theoretical frameworks underpinning gender bias in hiring - including Implicit Bias Theory, Social Role Theory, and Institutional Theory</li>
+      <li><span class="outcome-check">✓</span> Evaluate how structural bias operates at each stage of the talent pipeline, from job advertisement to executive promotion</li>
+      <li><span class="outcome-check">✓</span> Apply evidence-based governance tools - blind recruitment, structured scoring, and pay transparency - to reduce discriminatory outcomes</li>
+      <li><span class="outcome-check">✓</span> Design a measurement framework using KPIs and representation audits aligned to SDG 5 and SDG 16 targets</li>
+      <li><span class="outcome-check">✓</span> Collaborate as a team to analyse a real gender bias case and produce actionable consultancy recommendations using the ECCSR framework</li>
+    </ul>
+
+    <!-- ECCSR quick view -->
+    <div class="card card-accent" style="margin-top:32px;">
+      <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:18px; color:var(--navy); margin-bottom:8px;">The ECCSR Framework (Houghton, 2022)</h3>
+      <p style="font-size:14px; color:var(--gray-600); margin-bottom:16px;">All activities in this course are evaluated through five lenses that ensure alignment with societal values and institutional scrutiny.</p>
+      <div class="eccsr-grid">
+        <div class="eccsr-card e-card"><div class="eccsr-letter">E</div><div class="eccsr-word">thical</div></div>
+        <div class="eccsr-card c1-card"><div class="eccsr-letter">C</div><div class="eccsr-word">ollaboration</div></div>
+        <div class="eccsr-card c2-card"><div class="eccsr-letter">C</div><div class="eccsr-word">reating</div></div>
+        <div class="eccsr-card s-card"><div class="eccsr-letter">S</div><div class="eccsr-word">ustainable</div></div>
+        <div class="eccsr-card r-card"><div class="eccsr-letter">R</div><div class="eccsr-word">esults</div></div>
+      </div>
+    </div>
+    <div class="section-nav">
+      <span></span>
+      <button class="section-nav-btn next-btn" onclick="goTo(&#39;m1&#39;)">Begin Module 1 →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DIAGNOSTIC QUIZ ====== -->
+<!-- ====== MODULE 1: THEORETICAL FOUNDATIONS ====== -->
+<section id="sec-m1" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 1 of 5</div>
+    <h2 class="section-title">Theoretical Foundations of Gender Bias</h2>
+    <p class="section-subtitle">Most people making decisions in organisations genuinely believe they are being fair. Decades of research across psychology, sociology, and organisational theory tell us otherwise. This module introduces the frameworks that explain how gender bias develops, persists, and gets reproduced in organisational life, even by well-intentioned people.</p>
+  </div>
+  <div class="timing-chip">&#9203; 15 minutes &middot; 4 sections &middot; ECCSR: <strong>Ethical &middot; Creating</strong></div>
+
+  <!-- VIDEO: Module 1 Intro -->
+  <div style="padding:56.25% 0 0 0;position:relative;margin-bottom:32px;">
+    <iframe src="https://player.vimeo.com/video/1186268670?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Module 1 Intro"></iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <div class="diagnostic-intro" style="margin-bottom:28px;">
+    <strong>&#127919; Reflective Prompt:</strong> Think of the last hiring or promotion decision made in your organisation. What criteria guided it? Who made the call? Keep this in mind as you work through this module.
+  </div>
+
+  <!-- 1.1 Implicit Bias -->
+  <div class="card card-accent">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">1.1 Implicit Bias Theory and the IAT</h3>
+    <p style="margin-bottom:14px;">Established by Greenwald and Banaji (1995), Implicit Bias Theory proposes that all humans hold unconscious attitudes toward social groups, including those defined by gender, race, age, and class. These attitudes form through repeated exposure to cultural messages and norms across a lifetime. Implicit bias has three defining characteristics:</p>
+    <div class="theory-grid" style="margin-top:16px; margin-bottom:20px;">
+      <div class="theory-card">
+        <h4>Unconscious</h4>
+        <p>The individual is unaware they hold these associations. They operate silently beneath deliberate reasoning and conscious values.</p>
+      </div>
+      <div class="theory-card">
+        <h4>Automatic</h4>
+        <p>Activated instantly without deliberate thought. The brain uses learned shortcuts rather than full deliberation for each decision.</p>
+      </div>
+      <div class="theory-card">
+        <h4>Behavioural</h4>
+        <p>They influence real decisions and actions even when those actions contradict the person's stated beliefs about equality.</p>
+      </div>
+      <div class="theory-card">
+        <h4>Not a Character Flaw</h4>
+        <p>Implicit bias is a product of how the brain processes information efficiently. Recognising this is the first step to countering it.</p>
+      </div>
+    </div>
+    <p style="margin-bottom:14px;">The <strong>Implicit Association Test (IAT)</strong>, developed by Greenwald, McGhee and Schwartz (1998), measures unconscious associations by tracking how quickly participants pair social categories with attributes. Key findings from over 4.5 million completions (Project Implicit, 2023):</p>
+    <ul style="padding-left:20px; margin-bottom:16px;">
+      <li style="margin-bottom:6px;">75% of people, including equality advocates, associate men with careers and women with family roles</li>
+      <li style="margin-bottom:6px;">IAT scores predict real discriminatory behaviour in hiring and performance reviews across 122 studies</li>
+      <li style="margin-bottom:6px;">Bias is strongest in sectors with the deepest history of male dominance: technology, finance, and senior leadership</li>
+    </ul>
+    <div class="finding-box">
+      <h4>&#128205; Key Study: Moss-Racusin et al. (2012) - The Yale CV Audit</h4>
+      <p>Science faculty across US research universities evaluated identical CVs for a laboratory manager position. Only one detail changed: the applicant name, either Jennifer or John.</p>
+      <ul style="margin-top:10px;">
+        <li>"Jennifer" rated significantly <strong>less competent</strong> and <strong>less hireable</strong> despite identical qualifications</li>
+        <li>"John" offered a starting salary of $30,238 vs. $26,508 for "Jennifer", a $3,730 annual gap</li>
+        <li>Female faculty showed <strong>identical bias</strong> to male faculty, confirming this is systemic, not individual</li>
+        <li>Evidence-based responses: blind recruitment, structured scoring criteria, and diverse hiring panels</li>
+      </ul>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Ethical</span>
+      <span class="tag tag-gold">SDG 5.1</span>
+    </div>
+  </div>
+
+  <!-- 1.2 Social Role Theory and Gender Schema Theory -->
+  <div class="card card-blue">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">1.2 Social Role Theory and Gender Schema Theory</h3>
+    <p style="margin-bottom:14px;">Eagly and Wood (1999) argue that observed gender differences in behaviour are not innate. They arise from the historical division of labour in society, which created two dominant role associations that transferred directly into the workplace:</p>
+    <table class="data-table" style="margin-bottom:20px;">
+      <thead>
+        <tr><th>Communal Roles (associated with women)</th><th>Agentic Roles (associated with men)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nurturing, supportive, cooperative, empathetic</td>
+          <td>Assertive, independent, decisive, task-oriented</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-bottom:14px;"><strong>Role Congruity Theory (Eagly and Karau, 2002)</strong> shows that leadership roles are coded as agentic. When women apply for these roles, evaluators perceive an incongruence between their assumed communal traits and the agentic demands of the position. The bias is not about active dislike; it is about perceived fit. This creates a double bind: display communal traits and be seen as likeable but not leadership-ready. Display agentic traits and face a backlash for role violation (Rudman and Glick, 2001).</p>
+    <div class="finding-box" style="margin-bottom:16px;">
+      <h4>&#9878;&#65039; Real-World Case: Apple 2024</h4>
+      <p>In 2024, over 12,000 Apple female employees filed a federal class action suit alleging systemic pay discrimination, with the gap widening the longer women were employed. This is Social Role Theory made concrete: not a single act of prejudice, but a structural, compounding outcome embedded in salary and evaluation systems. Barron et al. (Management Science, 2024) distinguish explicit discriminators who act on bias even when visible from implicit discriminators who act only when context obscures their motive. Different types require different structural responses.</p>
+    </div>
+    <p style="margin-bottom:14px;"><strong>Gender Schema Theory</strong> adds that we all carry learned mental templates about what men and women are supposed to be like. In organisations, roles become gender-typed over time, creating an ideal worker archetype that aligns with the dominant gender rather than actual job requirements:</p>
+    <ul style="padding-left:20px; margin-bottom:14px;">
+      <li style="margin-bottom:6px;">In male-typed roles (tech, finance, C-suite): female candidates are perceived as a poor fit even when fully qualified</li>
+      <li style="margin-bottom:6px;">In female-typed roles (HR, nursing, education): male candidates face the same mismatch penalty in the opposite direction</li>
+      <li style="margin-bottom:6px;">The pattern is not about individual competence. It is about how the role is mentally framed by the people evaluating candidates</li>
+    </ul>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Creating</span>
+      <span class="tag tag-gold">SDG 5.5</span>
+    </div>
+  </div>
+
+  <!-- 1.3 Institutional Theory -->
+  <div class="card card-rose">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">1.3 Institutional Theory and Systemic Gender Inequality</h3>
+    <p style="margin-bottom:14px;">Institutional Theory (DiMaggio and Powell, 1983; Scott, 2001) explains why organisations embed similar practices over time, including discriminatory ones. Organisations conform to norms not because those norms are effective, but to gain legitimacy. This process, called <strong>institutional isomorphism</strong>, operates through three pressures:</p>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        Coercive Isomorphism - Legislation and Regulation
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        Organisations conform due to legislation, regulation, or pressure from powerful stakeholders such as equality law or investor expectations. Compliance is not the same as culture change. An organisation can tick a legal box while its informal norms remain unchanged.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        Mimetic Isomorphism - Copying Competitors
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        Facing uncertainty, organisations copy what competitors do, including biased hiring and evaluation practices. If the market leader lacks a structured promotion process, others follow suit, embedding the same gaps. This is how structural bias spreads across entire industries.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        Normative Isomorphism - Professional Networks and Education
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        Professional networks, education systems, and industry standards spread norms, including gendered assumptions about leadership. MBA programmes and executive education that historically trained predominantly male cohorts have normalised male leadership as the default expectation.
+      </div>
+    </div>
+    <div class="pull-quote" style="margin-top:20px;">
+      "Gender inequality is built into the architecture of work organisations through taken-for-granted policies that appear as normal business practice."
+      <cite>Joan Acker (1990). Hierarchies, Jobs, Bodies: A Theory of Gendered Organisations. Gender and Society.</cite>
+    </div>
+    <div class="finding-box" style="margin-top:16px;">
+      <h4>&#128202; The SDG 5 Research Gap</h4>
+      <p>A 2023 bibliometric review by Beloskar, Haldar and Gupta (Journal of Business Research) found that SDG 5 is among the least researched of all UN goals in business and management literature. Most corporate efforts focus on boardroom representation while evidence shows bias operates through every layer of an organisation, from entry-level hiring to mid-management promotion. Companies with women in meaningful decision-making roles consistently demonstrate stronger ethical performance and long-term value creation. The barrier is often not visible policy failure. It is the everyday assumptions baked into how people are hired, assessed, and promoted.</p>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Ethical - Sustainable</span>
+      <span class="tag tag-gold">SDG 16.7</span>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num">75%</div>
+      <div class="stat-desc">of people associate men with careers and women with family roles on the IAT, including equality advocates (Project Implicit, 2023)</div>
+    </div>
+    <div class="stat-card blue-top">
+      <div class="stat-num">$3,730</div>
+      <div class="stat-desc">annual salary gap for "Jennifer" vs "John" with identical CVs in the Moss-Racusin (2012) study</div>
+    </div>
+    <div class="stat-card rose-top">
+      <div class="stat-num">12,000+</div>
+      <div class="stat-desc">Apple female employees in 2024 class action suit alleging compounding structural pay discrimination</div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;intro&#39;)">&#8592; Back</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;m1quiz&#39;)">Module 1 Quiz &#8594;</button>
+  </div>
+</section>
+
+<!-- ====== MODULE 1 QUIZ ====== -->
+<section id="sec-m1quiz" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 1 - Knowledge Check</div>
+    <h2 class="section-title">Quiz: Theoretical Foundations</h2>
+    <p class="section-subtitle">6 questions. You need 70% (4 out of 6) to pass and unlock Module 2. If you do not pass, review the module content and try again.</p>
+  </div>
+  <div class="timing-chip">&#9203; Approx. 5 minutes - 6 questions - 70% pass required</div>
+
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h3>Module 1 Assessment</h3>
+      <p>Select the best answer for each question, then click Submit.</p>
+    </div>
+    <div class="quiz-body" id="m1quiz-body">
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q1</div>
+        <h4>According to Greenwald and Banaji (1995), implicit bias is best described as:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">A</div> Deliberate, conscious prejudice against a specific group</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">B</div> Automatic, unconscious associations that influence behaviour even when they contradict conscious values</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">C</div> A legal definition of workplace discrimination</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">D</div> A bias that only affects people with low levels of diversity training</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q2</div>
+        <h4>The Moss-Racusin et al. (2012) CV audit study most directly demonstrates that:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">A</div> Female candidates are less qualified for scientific roles</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">B</div> Hiring managers deliberately and consciously discriminate against women</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">C</div> Implicit bias influences professional judgements even among well-intentioned, qualified evaluators</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">D</div> CV formatting and layout is the primary driver of hiring decisions</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q3</div>
+        <h4>According to Social Role Theory (Eagly and Wood, 1999), why do women face disadvantage when applying for senior leadership roles?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">A</div> They lack the qualifications required for these positions</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">B</div> Evaluators perceive a mismatch between assumed communal traits and the agentic demands of leadership roles</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">C</div> Female candidates are less confident in interview settings</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">D</div> Organisations have formal written policies that favour male candidates</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="a">
+        <div class="quiz-q-num">Q4</div>
+        <h4>In Institutional Theory, "mimetic isomorphism" refers to organisations:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">A</div> Copying competitors' practices to reduce uncertainty, including biased ones</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">B</div> Following equality laws set by government regulators</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">C</div> Naturally developing fair and meritocratic systems over time</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">D</div> Managers deliberately reinforcing gender norms to maintain power</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q5</div>
+        <h4>The "double bind" described in Role Congruity Theory (Eagly and Karau, 2002) means women in leadership roles are penalised for:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">A</div> Choosing family responsibilities over career advancement</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">B</div> Lacking the technical skills required at senior levels</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">C</div> Either conforming to gender norms (seen as not leadership material) or defying them (seen as unlikeable)</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">D</div> Requesting flexible working arrangements from their managers</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="d">
+        <div class="quiz-q-num">Q6</div>
+        <h4>Gender Schema Theory explains that in male-typed roles such as technology and finance, female candidates are often perceived as:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">A</div> More collaborative and therefore better suited to team leadership</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">B</div> Equally suited to the role but disadvantaged by interview nerves</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">C</div> Better qualified on paper but less likely to accept an offer</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m1quiz&#39;)"><div class="quiz-option-marker">D</div> A poor fit for the role based on its gender-typed mental template, regardless of their actual competence</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="submitModuleQuiz(&#39;m1quiz&#39;,&#39;m1&#39;,&#39;m2&#39;)">Submit Answers</button>
+      <div class="quiz-score-box" id="m1quiz-score"></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m1&#39;)">&#8592; Module 1</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;m2&#39;)">Module 2 &#8594;</button>
+  </div>
+</section>
+
+<!-- ====== MODULE 2: STRUCTURAL BIAS ====== -->
+<section id="sec-m2" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 2 of 5</div>
+    <h2 class="section-title">Structural Bias in Organisational Systems</h2>
+    <p class="section-subtitle">Even if every individual in your organisation had zero personal bias, the systems and processes themselves can still produce unfair outcomes. This is structural bias - bias baked into the rules, processes, and informal norms of an organisation rather than living only inside people's heads. Think of it like a river: if the riverbed is tilted, the water will always flow in one direction regardless of individual intent.</p>
+  </div>
+  <div class="timing-chip">&#9203; 15 minutes &middot; 6 sections &middot; ECCSR: <strong>Ethical &middot; Sustainable &middot; Results</strong></div>
+
+  <!-- VIDEO: Module 2 Intro -->
+  <div style="padding:75% 0 0 0;position:relative;margin-bottom:32px;">
+    <iframe src="https://player.vimeo.com/video/1186269332?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Module 2 intro"></iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <!-- 2.1 Recruitment Funnel -->
+  <div class="card card-accent">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">2.1 Recruitment Funnel Bias</h3>
+    <p style="margin-bottom:14px;">The recruitment funnel is the step-by-step process a candidate moves through, from seeing a job advert to receiving an offer. At every stage, a decision is made, and at every stage, bias can enter. Bias does not require a bad actor. It can be embedded in the design of the process itself.</p>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        The Job Advert and CV Screening
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>Research by Gaucher, Friesen and Kay (2011) found that adverts using words like "dominant," "competitive," and "aggressive" attract significantly fewer female applicants. Language pre-filters the candidate pool before a single CV is even read.</p>
+        <ul style="margin:10px 0 0 20px;">
+          <li style="margin-bottom:6px;">CVs with employment gaps, more common among women due to caregiving, are routinely screened out despite no evidence that gaps predict poor performance</li>
+          <li style="margin-bottom:6px;">Amazon scrapped its AI recruitment tool in 2018 after it systematically downgraded CVs containing the word "women's", illustrating how AI tools trained on historical data reproduce embedded bias</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        The Interview Stage
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <p>Unstructured interviews are one of the highest-risk points for bias in the entire hiring process.</p>
+        <ul style="margin:10px 0 0 20px;">
+          <li style="margin-bottom:6px;">Questions tend to be harder and more probing for female candidates in male-typed roles (Swim and Sanna, 1996)</li>
+          <li style="margin-bottom:6px;">Women are more likely to be asked about family and childcare plans, which is both biased and illegal in many jurisdictions</li>
+          <li style="margin-bottom:6px;">"Culture fit" assessments are particularly prone to affinity bias, the tendency to favour people who remind the interviewer of themselves</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">SDG 5: Biased recruitment limits women's economic participation</span>
+    </div>
+    <div style="margin-top:6px;">
+      <span class="tag tag-blue">SDG 16: Consistently unequal outcomes are an institutional integrity failure</span>
+    </div>
+  </div>
+
+  <!-- 2.2 Leaking Pipeline -->
+  <div class="card">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:6px;">2.2 The Leaking Pipeline</h3>
+    <p style="font-size:14px; color:var(--gray-600); margin-bottom:20px;">Women start strongly in the talent pipeline but are filtered out disproportionately at each stage. The pipeline is not broken at the top. It is broken at the first step. (McKinsey and LeanIn.Org, 2024)</p>
+    <div class="funnel-wrap">
+      <div class="funnel-step f1"><span>Entry Level / Graduate</span><span class="pct">48%</span></div>
+      <div class="funnel-step f2"><span>Individual Contributor</span><span class="pct">47%</span></div>
+      <div class="funnel-step f3"><span>Manager (the Broken Rung)</span><span class="pct">38%</span></div>
+      <div class="funnel-step f4"><span>Senior Manager / Director</span><span class="pct">33%</span></div>
+      <div class="funnel-step f5"><span>C-Suite</span><span class="pct">29%</span></div>
+    </div>
+    <p style="font-size:12px; color:var(--gray-400); margin-top:10px;">Figures: percentage of women at each level. Source: McKinsey and LeanIn.Org, Women in the Workplace (2024)</p>
+  </div>
+
+  <!-- 2.3 Promotion Bottlenecks -->
+  <div class="card card-blue">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">2.3 Promotion Bottlenecks: The Broken Rung</h3>
+    <p style="margin-bottom:14px;">Promotion bottlenecks are structural points in the corporate hierarchy where advancement slows or stops for specific groups, consistently, over time. They are not caused by a single decision-maker, but by the cumulative design of evaluation systems.</p>
+
+    <div class="finding-box">
+      <h4>&#128205; McKinsey and LeanIn.Org (2024) - The Numbers</h4>
+      <ul>
+        <li>For every 100 men promoted to manager, only <strong>81 women</strong> make the same move, a figure barely changed since 2018</li>
+        <li>For women of colour, the gap is sharper still: only <strong>54 Black women</strong> promoted per 100 men at manager level</li>
+        <li>Women hold just <strong>29% of C-suite roles</strong> today</li>
+        <li>Gender disparity in seniority accounts for approximately <strong>70% of the overall gender pay gap</strong> (Benson, Li and Shue, 2023)</li>
+        <li>At the current rate, the UN estimates <strong>140 years</strong> to reach equal C-suite representation</li>
+      </ul>
+    </div>
+
+    <div class="case-study-box" style="margin-top:24px;">
+      <div class="case-study-label">Case Study - Goldman Sachs $215 Million Settlement (2023)</div>
+      <h3>Systemic Architectural Failure, Not a Single Bad Actor</h3>
+      <p>Female Associates and Vice Presidents challenged not individual managers, but the design of Goldman's promotion and evaluation systems. The court approved a $215 million settlement, the largest of its kind in US history before trial, with 78% of damages tied specifically to promotion processes. Fewer women at senior levels meant fewer advocates for those below, making the problem self-reinforcing. The lesson: if a firm of that scale could allow its systems to produce this level of harm over many years, no organisation is automatically immune. (Lieff Cabraser, 2023)</p>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Sustainable</span>
+      <span class="tag tag-gold">SDG 5.5</span>
+    </div>
+  </div>
+
+  <!-- 2.4 Performance Evaluation Language Bias -->
+  <div class="card card-rose">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">2.4 Performance Evaluation Language Bias</h3>
+    <p style="margin-bottom:14px;">Structural bias can appear in performance review language even when the process looks neutral. Everyone gets reviewed and everyone gets feedback, but if language consistently differs by gender, the system produces unequal outcomes over time.</p>
+
+    <table class="data-table" style="margin-bottom:16px;">
+      <thead>
+        <tr><th>Women are more often described as...</th><th>Men are more often described as...</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"Supportive," "caring," "collaborative," "reliable"</td>
+          <td>"Analytical," "strategic," "intellectual," "decisive"</td>
+        </tr>
+        <tr>
+          <td>Communal language - associated with being a good team member</td>
+          <td>Agentic language - associated with leadership and promotion potential</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-bottom:14px;">Women also receive <strong>less actionable development feedback</strong>, which limits their progression over time. A 2021 UK public-sector trial found that gender could be predicted from review language alone, showing that subtle linguistic bias was embedded in the feedback itself (Behavioural Insights Team, 2021).</p>
+
+    <div class="finding-box">
+      <h4>&#9881;&#65039; The Organisational Response</h4>
+      <ul>
+        <li>Define clear, consistent merit criteria across all evaluations before review cycles begin</li>
+        <li>Use structured feedback prompts to reduce discretionary language and individual interpretation</li>
+        <li>Run regular audits of review language across gender lines to identify pattern differences</li>
+        <li>Train managers on how different internal standards of merit produce systematically unequal outcomes</li>
+      </ul>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Results</span>
+    </div>
+  </div>
+
+  <!-- 2.5 Informal Sponsorship Gaps -->
+  <div class="card card-accent">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">2.5 Informal Sponsorship Gaps</h3>
+    <p style="margin-bottom:14px;">Most organisations have mentorship programmes. Far fewer address sponsorship, and the gap between the two is where inequality quietly compounds. A mentor advises you. A sponsor advocates for you in rooms you are not in, puts their credibility behind your name, and pushes for you in closed-door promotion conversations.</p>
+    <p style="margin-bottom:14px;">Ibarra, Carter and Silva (2010) found that women at equivalent career stages are consistently <strong>over-mentored and under-sponsored</strong>, while men receive sponsorship without asking for it. Being liked is not the same as being championed.</p>
+
+    <div class="stat-row" style="margin:20px 0;">
+      <div class="stat-card">
+        <div class="stat-num">31%</div>
+        <div class="stat-desc">of entry-level women have a sponsor (McKinsey and LeanIn.Org, 2025)</div>
+      </div>
+      <div class="stat-card blue-top">
+        <div class="stat-num">45%</div>
+        <div class="stat-desc">of entry-level men have a sponsor - a 14-point gap before a career has properly begun</div>
+      </div>
+      <div class="stat-card rose-top">
+        <div class="stat-num">2x</div>
+        <div class="stat-desc">Sponsored employees are promoted at nearly twice the rate of those without a sponsor</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Collaboration</span>
+      <span class="tag tag-gold">SDG 5.5</span>
+    </div>
+  </div>
+
+  <!-- 2.6 Intersectionality -->
+  <div class="card">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">2.6 Intersectionality and Compounding Disadvantage</h3>
+    <p style="margin-bottom:14px;">The structural biases in this module do not affect all women equally. Intersectionality describes how gender interacts with other characteristics, including race, ethnicity, disability, and socioeconomic background, to produce compounding disadvantages. Women of colour face sharper promotion gaps than white women, as the McKinsey and LeanIn.Org data consistently shows.</p>
+    <p style="margin-bottom:16px;">The systems explored in this module must therefore be examined not just by gender, but by the intersection of multiple identities. A response that addresses gender without addressing race, disability, or class will still leave significant gaps in place.</p>
+
+    <div class="finding-box">
+      <h4>&#128161; Module Summary - Four Areas of Structural Bias</h4>
+      <ul>
+        <li><strong>Recruitment funnel bias:</strong> Gendered language and unstructured processes filter out diverse candidates before merit is even assessed</li>
+        <li><strong>Promotion bottlenecks:</strong> The broken rung at first-time manager level compounds at every level above it, with women of colour facing the sharpest gaps</li>
+        <li><strong>Performance evaluation language bias:</strong> Communal versus agentic language shapes who is seen as leadership-ready, regardless of actual performance</li>
+        <li><strong>Informal sponsorship gaps:</strong> Being over-mentored and under-sponsored leaves women without the advocacy that drives promotion at critical career stages</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Myths accordions -->
+  <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin:28px 0 16px;">Common Myths vs. Evidence</h3>
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      "Women do not apply for senior roles because they lack confidence."
+      <span class="accordion-icon">+</span>
+    </div>
+    <div class="accordion-body">
+      Research by Tomas Chamorro-Premuzic (2013) shows that overconfidence in incompetent male leaders is systematically rewarded, creating the illusion that confidence equals competence. Women are not less confident; they are penalised for confidence displays. The selection system itself mistakes male overconfidence for leadership potential.
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      "Gender gaps disappear when you control for role and experience."
+      <span class="accordion-icon">+</span>
+    </div>
+    <div class="accordion-body">
+      When you control for role, you are controlling for the very variable that bias affects. Women are disproportionately sorted into lower-paying, lower-prestige roles through biased assignment and promotion decisions. Controlling for role can mask, rather than explain, the discrimination. (Blau and Kahn, 2017)
+    </div>
+  </div>
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      "This is a pipeline problem. We just need to hire more women at entry level."
+      <span class="accordion-icon">+</span>
+    </div>
+    <div class="accordion-body">
+      Women already enter organisations at roughly equal rates to men. The pipeline is not empty; it leaks. Focusing solely on entry-level recruitment ignores the structural barriers in promotion, sponsorship, performance review, and retention that filter women out before they reach senior levels. (McKinsey WitW, 2024)
+    </div>
+  </div>
+
+  <!-- Existing video block preserved -->
+  <div class="card card-blue" style="margin-top: 32px;">
+    <div class="section-eyebrow" style="margin-bottom: 12px;">&#127916; Module 2 Video</div>
+    <h3 style="font-size: 18px; color: var(--navy); margin-bottom: 8px;">Hiring Bias: A Closer Look</h3>
+    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Watch this short film exploring how hiring bias manifests in practice and what organisations can do to address it.</p>
+    <div style="padding:56.25% 0 0 0;position:relative;">
+      <iframe src="https://player.vimeo.com/video/1186261228?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Bias in the interview process"></iframe>
+    </div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m1quiz&#39;)">&#8592; Module 1 Quiz</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;m2quiz&#39;)">Module 2 Quiz &#8594;</button>
+  </div>
+</section>
+
+<!-- ====== MODULE 2 QUIZ ====== -->
+<section id="sec-m2quiz" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 2 - Knowledge Check</div>
+    <h2 class="section-title">Quiz: Structural Bias</h2>
+    <p class="section-subtitle">6 questions. You need 70% (4 out of 6) to pass and unlock Module 3.</p>
+  </div>
+  <div class="timing-chip">&#9203; Approx. 5 minutes - 6 questions - 70% pass required</div>
+
+  <div class="quiz-container">
+    <div class="quiz-header"><h3>Module 2 Assessment</h3><p>Select the best answer for each question, then click Submit.</p></div>
+    <div class="quiz-body" id="m2quiz-body">
+
+      <div class="quiz-question" data-correct="a">
+        <div class="quiz-q-num">Q1</div>
+        <h4>According to McKinsey and LeanIn.Org (2024), where does the gender advancement gap primarily originate in the corporate pipeline?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">A</div> At the first promotion to manager, the "broken rung"</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">B</div> At C-suite level due to the traditional glass ceiling</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">C</div> During the graduate recruitment and hiring stage</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">D</div> At senior vice president entry point</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q2</div>
+        <h4>Gaucher, Friesen and Kay (2011) found that masculine-coded language in job advertisements:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">A</div> Had no measurable effect on who applied for roles</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">B</div> Increased the overall number of applications received</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">C</div> Deterred female applicants and reduced the diversity of the applicant pool before a single CV was read</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">D</div> Attracted more experienced candidates regardless of gender</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q3</div>
+        <h4>In the context of performance reviews, research shows that performance attribution error means:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">A</div> Women are given more credit for team successes than men in most organisations</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">B</div> Men's success is attributed to ability, while women's success is attributed to luck or external factors</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">C</div> Female managers are more likely to take credit for their team's collective work</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">D</div> Promotion committees weight formal qualifications more heavily than performance ratings</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q4</div>
+        <h4>The Goldman Sachs $215 million settlement (2023) is significant because it arose from:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">A</div> The deliberate actions of a single discriminatory senior executive</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">B</div> A systemic, architectural failure across the firm's promotion and evaluation systems, not individual wrongdoing</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">C</div> A failure of the firm's legal and compliance team to monitor HR processes</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">D</div> An isolated incident in one specific business unit of the bank</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="a">
+        <div class="quiz-q-num">Q5</div>
+        <h4>According to McKinsey and LeanIn.Org (2025), what percentage of entry-level women have a sponsor compared to entry-level men?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">A</div> 31% of women vs. 45% of men, a 14-point gap before a career has begun</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">B</div> 45% of women vs. 31% of men, meaning women are better sponsored at entry level</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">C</div> Roughly equal rates of around 40% for both men and women</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">D</div> 20% of women vs. 60% of men at the entry level stage</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="d">
+        <div class="quiz-q-num">Q6</div>
+        <h4>Amazon scrapped its AI recruitment tool in 2018 because it:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">A</div> Was too expensive to operate at scale across global markets</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">B</div> Could not accurately assess technical qualifications for engineering roles</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">C</div> Was found to discriminate against candidates from non-English-speaking backgrounds</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m2quiz&#39;)"><div class="quiz-option-marker">D</div> Systematically downgraded CVs containing the word "women's," reproducing historical bias embedded in its training data</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="submitModuleQuiz(&#39;m2quiz&#39;,&#39;m2&#39;,&#39;m3&#39;)">Submit Answers</button>
+      <div class="quiz-score-box" id="m2quiz-score"></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m2&#39;)">&#8592; Module 2</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;m3&#39;)">Module 3 &#8594;</button>
+  </div>
+</section>
+
+<!-- ====== MODULE 3: GOVERNANCE TOOLS ====== -->
+<section id="sec-m3" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 3 of 5</div>
+    <h2 class="section-title">Governance and Institutional Design</h2>
+    <p class="section-subtitle">This module moves from individual awareness to institutional action. You will examine the governance structures that determine whether gender equality is a stated value or a measurable outcome. Each lesson connects directly to SDG 16's definition of strong institutions: transparent, accountable, and inclusive.</p>
+  </div>
+  <div class="timing-chip">&#9203; 15 minutes &middot; 4 lessons &middot; ECCSR: <strong>Creating &middot; Collaboration &middot; Sustainable &middot; Results</strong></div>
+
+  <!-- VIDEO: Module 3 Intro -->
+  <div style="padding:56.25% 0 0 0;position:relative;margin-bottom:32px;">
+    <iframe src="https://player.vimeo.com/video/1186270491?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Module 3 intro"></iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <!-- Lesson 1: Transparent Criteria -->
+  <div class="card card-accent">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">Lesson 1: Transparent Criteria</h3>
+    <p style="margin-bottom:14px;">Transparent criteria means the standards for hiring, promotion, or pay review are written down and visible to everyone involved <strong>before</strong> any decision is made. That sounds obvious. Most organisations do not actually do it. When criteria are vague, decision-makers fill the gap with gut feeling, and gut feeling, as Module 1 established, is not neutral.</p>
+
+    <div class="finding-box" style="margin-bottom:16px;">
+      <h4>&#128202; Research Spotlight: The Paradox of Meritocracy</h4>
+      <p>Castilla and Benard (2010, Administrative Science Quarterly): Companies that actively described themselves as meritocratic had <strong>larger gender and race pay gaps</strong> than those with formal, published standards. Calling something a meritocracy without defining what you are measuring does not reduce bias. It makes it harder to challenge.</p>
+    </div>
+
+    <p style="margin-bottom:14px;">Huang, Mayer and Miller (2024, Review of Financial Studies) tracked 72,000 workers across 1,000 financial firms and found women face a consistently higher promotion bar than equally performing men, regardless of whether the reviewing manager was male or female. The implication is direct: when criteria are undefined, bias fills the gap. Specific, published standards give it far less room to operate.</p>
+
+    <div class="pull-quote">
+      "Transparency does not mean lowering the bar. It means making sure everyone can see where the bar is before any decision is made."
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Ethical</span>
+      <span class="tag tag-gold">SDG 16.6</span>
+    </div>
+  </div>
+
+  <!-- Lesson 2: Standardised Scoring -->
+  <div class="card card-blue">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">Lesson 2: Standardised Scoring Systems</h3>
+    <p style="margin-bottom:14px;">A standardised scoring system is a structured framework where every candidate is evaluated against the same criteria, in the same way, every time. Instead of asking a panel "who felt strongest?", it asks each member to independently score candidates on pre-agreed dimensions using a consistent scale.</p>
+
+    <div class="finding-box" style="margin-bottom:16px;">
+      <h4>&#128200; The Evidence Base</h4>
+      <ul>
+        <li>Schmidt and Hunter (1998): 85 years of HR research showed structured interviews significantly outperformed unstructured ones in predicting actual job performance</li>
+        <li>Bohnet, van Geen and Bazerman (2016): evaluating against shared criteria shifts attention from stereotype to actual performance</li>
+        <li>Goldin and Rouse (2000): blind orchestral auditions increased the probability of a woman advancing by 50%. Only the removal of a visual gender cue changed the outcome</li>
+      </ul>
+    </div>
+
+    <h4 style="color:var(--navy); margin-bottom:12px;">The Five Core Components of a Standardised Scoring System</h4>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        1. Pre-defined Competency Dimensions
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        Agree on exactly what is being assessed before reviewing any candidate. Exclude vague descriptors like "presence" or "gravitas" - they cannot be scored consistently and often carry cultural bias toward dominant group norms.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        2. Behavioural Anchors
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        Each point on the scale is defined by a concrete behavioural description. A "4 out of 5" for communication means something specific and the same thing for every evaluator on the panel, removing subjective interpretation.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        3. Independent Scoring Before Discussion
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        Each panel member scores independently before any group conversation. Once a senior person expresses a view, others tend to align with it. Independent scoring preserves individual judgement and prevents groupthink from compressing the range of assessments.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        4. Aggregation and Review of Divergent Scores
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        Scores are collected and compared. Large divergences between evaluators are flagged and discussed openly, making outlying assessments visible and challengeable rather than silently overridden by seniority.
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        5. Full Audit Trail
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        Every score for every candidate is recorded and retained. This allows decisions to be reviewed, lets the organisation analyse patterns over time, and provides accountability if a decision is ever challenged legally or internally.
+      </div>
+    </div>
+
+    <div class="finding-box" style="margin-top:20px;">
+      <h4>&#127963;&#65039; SDG 16 Connection</h4>
+      <p>Standardised scoring delivers all three qualities SDG 16 defines for strong institutions: transparent systems (criteria visible before evaluation), procedural fairness (same process for every candidate), and consistency and accountability (every decision recorded and open to review).</p>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Creating - Results</span>
+      <span class="tag tag-gold">SDG 16.7</span>
+    </div>
+  </div>
+
+  <!-- Lesson 3: Accountability and Mandatory Reporting -->
+  <div class="card card-rose">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">Lesson 3: Accountability and Mandatory Reporting</h3>
+    <p style="margin-bottom:14px;">Transparent criteria define what fairness looks like. Accountability mechanisms are what make it real. Without measurement and consequence, even well-intentioned commitments stall. There are two levels:</p>
+    <ul style="padding-left:20px; margin-bottom:16px;">
+      <li style="margin-bottom:6px;"><strong>Internal accountability:</strong> Pay audits and promotion tracking that organisations do themselves</li>
+      <li style="margin-bottom:6px;"><strong>External accountability:</strong> Mandatory public reporting and regulatory enforcement that requires organisations to answer to others</li>
+    </ul>
+
+    <div class="finding-box" style="margin-bottom:16px;">
+      <h4>&#128203; Case Study: UK Gender Pay Gap Reporting Regulations (2017)</h4>
+      <ul>
+        <li>All UK employers with 250 or more employees must publish gender pay gap data annually on a publicly accessible government platform</li>
+        <li>The UK median hourly gender pay gap fell from 9.1% in 2023/24 to 8.6% in 2024/25</li>
+        <li>Organisations that continued reporting during Covid-19 showed a <strong>6% smaller gap</strong> than those that paused, confirming that the act of reporting itself changes behaviour</li>
+        <li>From 2027, large employers must also publish equality action plans under the UK Employment Rights Act 2025</li>
+      </ul>
+    </div>
+
+    <p style="margin-bottom:14px;">The <strong>EU Pay Transparency Directive (2023)</strong> requires organisations with 100 or more employees to report gender pay data with enforcement attached, to be transposed into national law across member states by 2027. The regulatory consensus forming across major economies is clear: voluntary commitment is no longer considered sufficient governance.</p>
+
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Sustainable - Results</span>
+      <span class="tag tag-gold">SDG 5.1</span>
+    </div>
+  </div>
+
+  <!-- Lesson 4: Bias Audits -->
+  <div class="card">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">Lesson 4: Bias Audits</h3>
+    <p style="margin-bottom:14px;">A bias audit is a structured review of decision processes and outcomes to identify gendered patterns. Instead of relying on good intentions, it asks: "Are our systems producing fair outcomes consistently, and can we evidence that?"</p>
+
+    <div class="theory-grid" style="margin-bottom:20px;">
+      <div class="theory-card">
+        <h4>Process Audit</h4>
+        <p>Are controls in place? Clear criteria, panel calibration, documented decisions, structured scoring rubrics at every stage.</p>
+      </div>
+      <div class="theory-card">
+        <h4>Outcome Audit</h4>
+        <p>Do results show disparities in ratings, promotions, pay, and access to stretch assignments or high-visibility projects?</p>
+      </div>
+    </div>
+
+    <h4 style="color:var(--navy); margin-bottom:12px;">The Five-Step Audit Cycle</h4>
+    <table class="data-table">
+      <thead>
+        <tr><th>Step</th><th>Action</th><th>Key Focus</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1. Define scope</strong></td><td>Select which decisions to audit</td><td>Hiring, performance, promotion, project allocation</td></tr>
+        <tr><td><strong>2. Set indicators</strong></td><td>Agree on what to measure</td><td>Rating distributions, promotion velocity, pay gap, feedback language</td></tr>
+        <tr><td><strong>3. Assign ownership</strong></td><td>Establish clear accountability</td><td>Exec sponsor, HR or People Analytics owner, independent review step</td></tr>
+        <tr><td><strong>4. Act on findings</strong></td><td>Implement targeted changes</td><td>Tighten criteria, add structured rubrics, remove vague assessments</td></tr>
+        <tr><td><strong>5. Re-audit</strong></td><td>Confirm outcomes improved</td><td>Not just compliance activity - genuine outcome change</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pull-quote" style="margin-top:20px;">
+      "Bias audits translate gender equity from a value statement into a manageable system. They create visibility, accountability, and continuous improvement, which is exactly what institutional design is supposed to deliver."
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Results - Sustainable</span>
+      <span class="tag tag-gold">SDG 16.6</span>
+    </div>
+  </div>
+
+  <!-- ECCSR Framework Detail -->
+  <div class="card" style="margin-top:32px;">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:16px;">Applying the ECCSR Framework to Hiring Reform</h3>
+    <p style="font-size:14px; color:var(--gray-600); margin-bottom:20px;">Click each element to see how it applies to designing equitable hiring processes.</p>
+    <div class="eccsr-grid" id="m3-eccsr">
+      <div class="eccsr-card e-card" onclick="showEccsrDetail(&#39;e&#39;)"><div class="eccsr-letter">E</div><div class="eccsr-word">thical</div></div>
+      <div class="eccsr-card c1-card" onclick="showEccsrDetail(&#39;c1&#39;)"><div class="eccsr-letter">C</div><div class="eccsr-word">ollaboration</div></div>
+      <div class="eccsr-card c2-card" onclick="showEccsrDetail(&#39;c2&#39;)"><div class="eccsr-letter">C</div><div class="eccsr-word">reating</div></div>
+      <div class="eccsr-card s-card" onclick="showEccsrDetail(&#39;s&#39;)"><div class="eccsr-letter">S</div><div class="eccsr-word">ustainable</div></div>
+      <div class="eccsr-card r-card" onclick="showEccsrDetail(&#39;r&#39;)"><div class="eccsr-letter">R</div><div class="eccsr-word">esults</div></div>
+    </div>
+    <div class="eccsr-detail" id="eccsr-e">
+      <strong>Ethical:</strong> Are your hiring processes free from discriminatory criteria? Are you compliant with equality legislation (Employment Equality Acts 1998 to 2015; EU Pay Transparency Directive)? Is every candidate treated with dignity and their data protected under GDPR?
+    </div>
+    <div class="eccsr-detail" id="eccsr-c1">
+      <strong>Collaboration:</strong> Are diverse panels genuinely empowered to challenge decisions? Is HR working with line managers and D&amp;I leads in designing equitable criteria? Is the process co-designed with underrepresented groups whose lived experience should inform the design?
+    </div>
+    <div class="eccsr-detail" id="eccsr-c2">
+      <strong>Creating:</strong> Are you using innovative tools such as blind CV platforms, AI-assisted bias checkers, and structured scoring technology to redesign your process? Are you creating new role structures that allow for flexible career paths and remove proximity bias?
+    </div>
+    <div class="eccsr-detail" id="eccsr-s">
+      <strong>Sustainable:</strong> Will your interventions produce lasting change or are they one-off initiatives? Is gender equity embedded in succession planning, not just recruitment? Does your approach align with SDG 5 and SDG 16 long-term commitments and regulatory direction?
+    </div>
+    <div class="eccsr-detail" id="eccsr-r">
+      <strong>Results:</strong> What are your measurable targets? What KPIs are you tracking such as shortlist diversity percentage, interview-to-offer conversion by gender, and promotion rates? How will you report progress to leadership and external stakeholders?
+    </div>
+  </div>
+
+  <!-- VIDEO: Module 3 End -->
+  <div style="padding:56.25% 0 0 0;position:relative;margin-bottom:32px;margin-top:32px;">
+    <iframe src="https://player.vimeo.com/video/1186271651?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Bias in the promotion process"></iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m2quiz&#39;)">&#8592; Module 2 Quiz</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;m3quiz&#39;)">Module 3 Quiz &#8594;</button>
+  </div>
+</section>
+
+<!-- ====== MODULE 3 QUIZ ====== -->
+<section id="sec-m3quiz" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 3 - Knowledge Check</div>
+    <h2 class="section-title">Quiz: Governance and Institutional Design</h2>
+    <p class="section-subtitle">6 questions. You need 70% (4 out of 6) to pass and unlock Module 4.</p>
+  </div>
+  <div class="timing-chip">&#9203; Approx. 5 minutes - 6 questions - 70% pass required</div>
+
+  <div class="quiz-container">
+    <div class="quiz-header"><h3>Module 3 Assessment</h3><p>Select the best answer for each question, then click Submit.</p></div>
+    <div class="quiz-body" id="m3quiz-body">
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q1</div>
+        <h4>Goldin and Rouse (2000) found that blind auditions in symphony orchestras increased the probability of a woman advancing by approximately:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">A</div> 5 to 10%</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">B</div> 50%, with only the removal of a visual gender cue changing the outcome</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">C</div> 10 to 15%</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">D</div> 3 to 5%</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q2</div>
+        <h4>Compared to unstructured interviews, structured interviews based on Schmidt and Hunter (1998) are:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">A</div> More time-consuming and less predictive of actual job performance</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">B</div> Equally predictive of performance but more expensive to design and administer</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">C</div> More predictive of job performance across 85 years of research and more equitable across demographic groups</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">D</div> More susceptible to social desirability bias because candidates prepare scripted answers</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q3</div>
+        <h4>Under the UK Gender Pay Gap Reporting Regulations (2017), which employers are legally required to publish their gender pay gap annually?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">A</div> All employers regardless of size</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">B</div> Only public sector employers and government departments</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">C</div> Employers with 250 or more employees</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">D</div> Only FTSE 100 listed companies</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="d">
+        <div class="quiz-q-num">Q4</div>
+        <h4>The EU Pay Transparency Directive (2023) applies to organisations with how many employees, and requires what key action?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">A</div> 500 or more employees, and requires mandatory gender quotas for senior roles</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">B</div> 1,000 or more employees, and requires publishing individual employee salary details</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">C</div> 50 or more employees, and requires equal pay for equivalent roles immediately</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">D</div> 100 or more employees, and requires reporting gender pay data with enforcement attached by 2027</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q5</div>
+        <h4>Castilla and Benard (2010) found that organisations calling themselves meritocratic without formal published standards:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">A</div> Had smaller gender and race pay gaps because employees trusted the process</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">B</div> Had larger gender and race pay gaps, as the meritocracy label made bias harder to identify and challenge</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">C</div> Showed no significant difference compared to organisations without a meritocracy narrative</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">D</div> Were more likely to comply with equality legislation than those using formal criteria</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="a">
+        <div class="quiz-q-num">Q6</div>
+        <h4>In a bias audit, what is the correct order of the five-step audit cycle?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">A</div> Define scope, set indicators, assign ownership, act on findings, re-audit</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">B</div> Assign ownership, define scope, act on findings, set indicators, re-audit</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">C</div> Set indicators, define scope, re-audit, assign ownership, act on findings</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m3quiz&#39;)"><div class="quiz-option-marker">D</div> Act on findings, define scope, set indicators, assign ownership, re-audit</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="submitModuleQuiz(&#39;m3quiz&#39;,&#39;m3&#39;,&#39;m4&#39;)">Submit Answers</button>
+      <div class="quiz-score-box" id="m3quiz-score"></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m3&#39;)">&#8592; Module 3</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;m4&#39;)">Module 4 &#8594;</button>
+  </div>
+</section>
+
+<!-- ====== MODULE 4: IMPLEMENTATION ====== -->
+<section id="sec-m4" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 4 of 5</div>
+    <h2 class="section-title">Implementation and Measurement</h2>
+    <p class="section-subtitle">Many leadership teams point to strong entry-level diversity as proof of success. But static headcount is an illusion. We have to measure velocity: who is actually moving through the organisation, at what speed, and where the gaps first appear. This module builds the measurement and governance framework that converts intent into accountable action.</p>
+  </div>
+  <div class="timing-chip">&#9203; 12 minutes &middot; 4 parts &middot; ECCSR: <strong>Sustainable &middot; Results</strong></div>
+
+  <!-- VIDEO: Module 4 Intro -->
+  <div style="padding:75% 0 0 0;position:relative;margin-bottom:32px;">
+    <iframe src="https://player.vimeo.com/video/1186271048?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="module 4 intro"></iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <!-- Part 1: KPI Framework -->
+  <div class="card card-accent">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">Part 1: Gender Equity KPI Framework</h3>
+    <p style="margin-bottom:16px;">Effective measurement requires tracking outcomes at each stage of the talent lifecycle. Headline representation figures tell you where you are. Pipeline KPIs tell you where you are going and why.</p>
+    <table class="data-table">
+      <thead>
+        <tr><th>KPI Category</th><th>Specific Metric</th><th>Target</th><th>Review Cadence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Pipeline Representation</strong></td><td>% women in shortlists by grade</td><td>40% or above</td><td>Per hire</td></tr>
+        <tr><td><strong>Promotion Parity</strong></td><td>Promotion rate: women vs men at same grade</td><td>Within 5% gap</td><td>Annual</td></tr>
+        <tr><td><strong>Pay Equity</strong></td><td>Adjusted gender pay gap (%)</td><td>Below 5%</td><td>Annual</td></tr>
+        <tr><td><strong>Retention</strong></td><td>Voluntary attrition by gender and level</td><td>Parity within 5%</td><td>Quarterly</td></tr>
+        <tr><td><strong>Process Equity</strong></td><td>Offer-to-accept rate by gender</td><td>Parity</td><td>Per hire</td></tr>
+        <tr><td><strong>Development Access</strong></td><td>% of women in leadership development programmes</td><td>50% or above</td><td>Annual</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Results</span>
+      <span class="tag tag-gold">SDG 5.5</span>
+    </div>
+  </div>
+
+  <!-- Part 2: Measuring Promotion Velocity -->
+  <div class="card card-blue">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">Part 2: Measuring Promotion Velocity and the Potential Penalty</h3>
+    <p style="margin-bottom:14px;">For every 100 men promoted from entry level to manager, only 81 women make the same move. This is not the glass ceiling. This is the broken rung, and the pipeline never recovers from it. (McKinsey and LeanIn.Org, 2024)</p>
+
+    <div class="finding-box" style="margin-bottom:16px;">
+      <h4>&#128204; The Potential Penalty: Benson, Li and Shue (2024)</h4>
+      <p>A landmark study of 30,000 management-track employees uncovered a structural trap. Women consistently received <strong>higher ratings</strong> for their actual, proven past performance. Yet when managers scored them on "future potential," women were <strong>systematically rated lower</strong>. Behavioural economists Exley and Kessler (2022) provide the link: promotion panels heavily reward assertive self-advocacy. Because men systematically describe identical performance more favourably, panels mistake inflated self-advocacy for leadership potential. When promotions are based on subjective potential rather than objective performance, bias wins.</p>
+    </div>
+
+    <h4 style="color:var(--navy); margin-bottom:12px;">The Governance Fix: Promotion Velocity Audits</h4>
+    <p style="margin-bottom:14px;">Apply the <strong>Four-Fifths (80%) Rule</strong> from the US Equal Employment Opportunity Commission (EEOC, 1978). Before a promotion cycle is finalised, HR audits the ratios. If the promotion rate for women is less than 80% of the promotion rate for men, the cycle is paused. The panel must review the data and justify any discrepancy with objective evidence, removing subjective gut feelings about potential. This intercepts bias in real time, protecting the organisation from compliance risk and the costly attrition of capable female talent.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-num">81</div>
+        <div class="stat-desc">women promoted to manager for every 100 men at the same level (McKinsey, 2024)</div>
+      </div>
+      <div class="stat-card blue-top">
+        <div class="stat-num">54</div>
+        <div class="stat-desc">Black women promoted to manager for every 100 men - the sharpest gap in the data</div>
+      </div>
+      <div class="stat-card rose-top">
+        <div class="stat-num">80%</div>
+        <div class="stat-desc">The EEOC Four-Fifths Rule threshold that triggers a mandatory promotion cycle pause and review</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Results - Ethical</span>
+      <span class="tag tag-gold">SDG 5.5</span>
+    </div>
+  </div>
+
+  <!-- Part 3: Leadership Pipeline Tracking -->
+  <div class="card card-rose">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">Part 3: Leadership Pipeline Tracking</h3>
+    <p style="margin-bottom:14px;">A leadership pipeline is the sequence of roles and development stages through which employees progress toward senior leadership. Tracking it means measuring, at every stage, who is advancing, who is stalling, and where gaps by gender first appear. Without pipeline data, organisations cannot see where women exit the progression track or why. Tracking converts an invisible pattern into a visible, manageable problem.</p>
+
+    <div class="finding-box" style="margin-bottom:16px;">
+      <h4>&#128202; What the Data Tells Us (McKinsey and LeanIn.Org, 2024)</h4>
+      <ul>
+        <li>Women represent <strong>48% of entry-level employees</strong> but only <strong>29% of C-suite roles</strong></li>
+        <li>The largest single drop occurs at the first promotion to manager: the broken rung</li>
+        <li>Once women are underrepresented at manager level, the deficit <strong>compounds at every level above</strong></li>
+        <li>At the current rate of progress, gender parity in the C-suite is more than a generation away</li>
+        <li>The pipeline does not leak evenly. It leaks at specific, identifiable points, which means it can be fixed at those points</li>
+      </ul>
+    </div>
+
+    <h4 style="color:var(--navy); margin-bottom:12px;">Four Categories of Pipeline Data to Track Consistently</h4>
+    <div class="theory-grid">
+      <div class="theory-card">
+        <h4>1. Representation Ratios</h4>
+        <p>The percentage of women at each level from entry through to executive, broken down by level, function, and business unit, not just the overall headline figure.</p>
+      </div>
+      <div class="theory-card">
+        <h4>2. Promotion Velocity</h4>
+        <p>How long it takes women versus men to move from one level to the next. A gap in speed of progression, even where overall numbers look comparable, signals structural disadvantage.</p>
+      </div>
+      <div class="theory-card">
+        <h4>3. Attrition by Level</h4>
+        <p>Where women are leaving and at what career stage. High attrition at mid-management often signals that women are hitting a ceiling before they are visible enough to appear in headline diversity statistics.</p>
+      </div>
+      <div class="theory-card">
+        <h4>4. Access to Development</h4>
+        <p>Who receives sponsorship, stretch assignments, high-visibility projects, and leadership development programmes. Progression is built through opportunity, not time served alone.</p>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Sustainable</span>
+      <span class="tag tag-gold">SDG 5.5</span>
+    </div>
+  </div>
+
+  <!-- Part 4: SDG Alignment and Business Case -->
+  <div class="card">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">Part 4: SDG Alignment, Accountability and the Business Case</h3>
+    <table class="data-table" style="margin-bottom:24px;">
+      <thead>
+        <tr><th>SDG Target</th><th>Indicator</th><th>Organisational Action</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SDG 5.1</strong> - End discrimination</td>
+          <td>Gender pay gap %</td>
+          <td>Annual pay equity audit; EU Directive compliance by 2027</td>
+        </tr>
+        <tr>
+          <td><strong>SDG 5.5</strong> - Equal leadership</td>
+          <td>% women in senior roles</td>
+          <td>Pipeline tracking; representation targets with reporting cadence</td>
+        </tr>
+        <tr>
+          <td><strong>SDG 16.6</strong> - Accountable institutions</td>
+          <td>Process transparency score</td>
+          <td>Publish hiring criteria; document all panel decisions with audit trail</td>
+        </tr>
+        <tr>
+          <td><strong>SDG 16.7</strong> - Inclusive decision-making</td>
+          <td>Panel gender diversity %</td>
+          <td>Diverse panel policy; bias training mandatory for all interviewers</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="finding-box">
+      <h4>&#128188; The Business Case for Gender Equity</h4>
+      <ul>
+        <li>McKinsey Diversity Wins (2023): companies in the top quartile for gender diversity in leadership are <strong>39% more likely</strong> to outperform peers on profitability</li>
+        <li>Credit Suisse Research Institute (2021): companies with 25% or more women in senior roles had <strong>3x higher return on equity</strong> compared to those with fewer</li>
+        <li>Deloitte Insights (2022): inclusive cultures see <strong>2.3x higher cash flow per employee</strong> over three years compared to less inclusive peers</li>
+        <li>PwC Ireland (2023): gender-diverse boards reduce earnings manipulation and improve ESG performance scores across all sectors</li>
+        <li>SDG 5 (Women in the Workplace, 2024): at the current rate, it will take over <strong>140 years</strong> to reach equal C-suite representation. Pipeline tracking is the mechanism through which organisations identify and close the gaps driving that deficit</li>
+      </ul>
+    </div>
+    <div style="margin-top:12px;">
+      <span class="tag tag-blue">ECCSR: Results - Sustainable</span>
+      <span class="tag tag-gold">SDG 5.1 - SDG 16</span>
+    </div>
+  </div>
+
+  <!-- VIDEO: Module 4 End -->
+  <div style="padding:56.25% 0 0 0;position:relative;margin-bottom:32px;margin-top:32px;">
+    <iframe src="https://player.vimeo.com/video/1186273144?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="The Bias Audit"></iframe>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m3quiz&#39;)">&#8592; Module 3 Quiz</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;m4quiz&#39;)">Module 4 Quiz &#8594;</button>
+  </div>
+</section>
+
+<!-- ====== MODULE 4 QUIZ ====== -->
+<section id="sec-m4quiz" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 4 - Knowledge Check</div>
+    <h2 class="section-title">Quiz: Implementation and Measurement</h2>
+    <p class="section-subtitle">6 questions. You need 70% (4 out of 6) to pass and unlock the Group Project.</p>
+  </div>
+  <div class="timing-chip">&#9203; Approx. 5 minutes - 6 questions - 70% pass required</div>
+
+  <div class="quiz-container">
+    <div class="quiz-header"><h3>Module 4 Assessment</h3><p>Select the best answer for each question, then click Submit.</p></div>
+    <div class="quiz-body" id="m4quiz-body">
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q1</div>
+        <h4>In a gender equity KPI framework, "pipeline representation" is best measured by tracking:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">A</div> The total number of women employed across the entire organisation</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">B</div> The gender pay gap at board level only, reported annually</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">C</div> The percentage of women on shortlists at each grade level, per hiring round</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">D</div> Annual HR survey satisfaction scores disaggregated by gender</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q2</div>
+        <h4>Benson, Li and Shue (2024) identified the "Potential Penalty" as a structural trap where:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">A</div> Women are rated lower on past performance but higher on future leadership potential</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">B</div> Women receive higher ratings for proven past performance but are systematically rated lower on subjective "future potential"</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">C</div> Women are rated equally to men on both performance and potential but receive lower salaries</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">D</div> Men receive higher performance ratings but lower potential scores than women at equivalent levels</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="a">
+        <div class="quiz-q-num">Q3</div>
+        <h4>The EEOC Four-Fifths (80%) Rule in promotion velocity audits means:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">A</div> If the promotion rate for women falls below 80% of the promotion rate for men, the cycle is paused for objective data review</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">B</div> At least 80% of promoted candidates in each cycle must be from underrepresented groups</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">C</div> Women must represent at least 80% of all applicants for promotion to be considered fair</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">D</div> 80% of performance review scores must be supported by documented behavioural evidence</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="d">
+        <div class="quiz-q-num">Q4</div>
+        <h4>According to McKinsey and LeanIn.Org (2024), what percentage of C-suite roles are held by women today?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">A</div> 48%, reflecting parity with entry-level representation</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">B</div> 38%, similar to the representation rate at manager level</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">C</div> 15%, limited to regulated sectors with mandatory board quotas</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">D</div> 29%, despite women representing 48% of employees at entry level</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="a">
+        <div class="quiz-q-num">Q5</div>
+        <h4>The correct sequence of a representation audit cycle is:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">A</div> Data Collection, Gap Analysis, Root Cause Review, Intervention and Re-audit</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">B</div> Root Cause Review, Data Collection, Intervention, Gap Analysis</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">C</div> Intervention, Data Collection, Gap Analysis, Root Cause Review</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">D</div> Gap Analysis, Root Cause Review, Data Collection, Intervention</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q6</div>
+        <h4>According to McKinsey Diversity Wins (2023), companies in the top quartile for gender diversity in leadership are:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">A</div> 10% more likely to outperform peers on profitability</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">B</div> 39% more likely to outperform peers on profitability</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">C</div> 15% more likely to outperform peers on profitability</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;m4quiz&#39;)"><div class="quiz-option-marker">D</div> 65% more likely to outperform peers on profitability</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="submitModuleQuiz(&#39;m4quiz&#39;,&#39;m4&#39;,&#39;m5&#39;)">Submit Answers</button>
+      <div class="quiz-score-box" id="m4quiz-score"></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m4&#39;)">&#8592; Module 4</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;m5&#39;)">Module 5: Group Project &#8594;</button>
+  </div>
+</section>
+
+<section id="sec-m5" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Module 5 of 5 · Team Assignment</div>
+    <h2 class="section-title">Group Consultancy Simulation</h2>
+    <p class="section-subtitle">Apply everything you have learned to a real-world case. Your team acts as external consultants advising an organisation on how to address structural gender bias in their talent processes.</p>
+  </div>
+  <div class="timing-chip">⏱ Group Project · 30–60 minutes team time · ECCSR: All 5 dimensions</div>
+
+  <!-- Case Study: Goldman Sachs -->
+  <div class="case-study-box">
+    <div class="case-study-label">Primary Case Study</div>
+    <h3>Goldman Sachs &amp; the Systemic Pay and Promotion Gap (2010–2020)</h3>
+    <p style="margin-bottom:14px;"><strong>Background:</strong> In 2010, a group of female Goldman Sachs employees filed a class-action lawsuit alleging systemic pay and promotion discrimination. The case, Cristina Chen-Oster et al. v. Goldman Sachs, alleged that Goldman's culture systematically excluded women from high-revenue businesses and that internal review processes were structurally biased.</p>
+    <p style="margin-bottom:14px;"><strong>Key Findings from Internal Data (disclosed during litigation):</strong></p>
+    <ul style="padding-left:20px; color:rgba(255,255,255,0.85); font-size:14px; line-height:1.8;">
+      <li>Female VPs earned approximately $100,000 less annually than male VPs of equivalent tenure</li>
+      <li>Women received lower performance ratings despite equivalent client revenue generation</li>
+      <li>Annual 360-degree review processes used language more likely to penalise assertiveness in women</li>
+      <li>Promotion committees were overwhelmingly male; no structured criteria existed for manager-level advancement</li>
+      <li>The "360 Committee" review process lacked transparent scoring - decisions were made through informal consensus</li>
+    </ul>
+    <p style="margin-top:14px; font-size:14px; color:rgba(255,255,255,0.7);">Goldman Sachs settled the case for $215 million in 2023 without admitting liability, while committing to reforms in their promotion and compensation processes. The case remains a landmark in employment discrimination law.</p>
+  </div>
+
+  <!-- Deliverables -->
+  <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:22px; color:var(--navy); margin:32px 0 16px;">Your Deliverables</h3>
+  <p style="color:var(--gray-600); margin-bottom:20px; font-size:14.5px;">As a team, work through the Goldman Sachs case and complete the two activities below.</p>
+
+  <div class="deliverable-grid">
+    <div class="deliverable-card">
+      <h4>🎤 1. Team Discussion</h4>
+      <p>As a group, discuss the Goldman Sachs case. Identify where gender bias entered their processes, apply the ECCSR framework, and agree on your top recommendations. Be ready to share your findings with the wider group.</p>
+    </div>
+    <div class="deliverable-card">
+      <h4>📋 2. Action Plan</h4>
+      <p>Complete the interactive Action Plan in the next section. Map your team's recommendations to KPI targets, ECCSR dimensions, and a realistic implementation timeline for Goldman Sachs.</p>
+    </div>
+  </div>
+
+  <!-- ECCSR Analysis Framework -->
+  <div class="card" style="margin-top:28px;">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:20px; color:var(--navy); margin-bottom:12px;">ECCSR Analysis Template for Goldman Sachs Case</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Dimension</th><th>Key Question</th><th>Evidence from Case</th><th>Your Recommendation</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Ethical</strong></td><td>Did Goldman's processes meet legal and ethical standards?</td><td>Pay gap, biased 360 language…</td><td>[Your team's answer]</td></tr>
+        <tr><td><strong>Collaboration</strong></td><td>Were promotion committees genuinely inclusive and diverse?</td><td>Male-dominated committees…</td><td>[Your team's answer]</td></tr>
+        <tr><td><strong>Creating</strong></td><td>Were any innovative solutions proposed internally?</td><td>Post-settlement reforms…</td><td>[Your team's answer]</td></tr>
+        <tr><td><strong>Sustainable</strong></td><td>Will the settlement reforms produce lasting change?</td><td>$215M settlement, commitments…</td><td>[Your team's answer]</td></tr>
+        <tr><td><strong>Results</strong></td><td>What measurable outcomes should follow intervention?</td><td>No KPIs published…</td><td>[Your team's answer]</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Reflective prompt -->
+  <div class="card card-accent" style="margin-top:24px;">
+    <h4 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:17px; color:var(--navy); margin-bottom:10px;">🪞 Reflective Learning</h4>
+    <p style="font-size:14px; color:var(--gray-600); margin-bottom:12px;">As you complete this group project, take a moment to reflect individually on the following:</p>
+    <ul style="padding-left:20px; font-size:14px; color:var(--gray-800);">
+      <li style="margin-bottom:8px;">What new knowledge about gender bias did this course give you that you did not have before?</li>
+      <li style="margin-bottom:8px;">How might this change how you approach talent decisions in your own career?</li>
+      <li style="margin-bottom:8px;">Evaluate the course content critically: what would you improve for future learners?</li>
+      <li>What is one concrete action you will take in your organisation in the next 30 days?</li>
+    </ul>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m4&#39;)">← Module 4</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;action&#39;)">Individual Action Plan →</button>
+  </div>
+</section>
+
+<!-- ====== ACTION PLAN ====== -->
+<section id="sec-action" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Individual Deliverable</div>
+    <h2 class="section-title">Personal Action Plan</h2>
+    <p class="section-subtitle">Commit to specific, measurable actions you will take in your own workplace. This template can be downloaded and shared with your manager or D&amp;I lead.</p>
+  </div>
+  <div class="timing-chip">⏱ 10 minutes to complete · Reflective Activity</div>
+
+  <div class="card">
+    <div class="action-plan-form">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" id="ap-name" placeholder="Full name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Your Organisation &amp; Role</label>
+        <input type="text" class="form-input" id="ap-org" placeholder="Company name · Job title">
+      </div>
+      <div class="form-group">
+        <label class="form-label">The biggest gender equity challenge in my current workplace is:</label>
+        <textarea class="form-textarea" id="ap-challenge" placeholder="Describe the specific challenge you observe..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Three concrete actions I will take in the next 90 days:</label>
+        <input type="text" class="form-input" id="ap-a1" placeholder="Action 1 (e.g. Propose blind CV screening for our next recruitment round)" style="margin-bottom:8px;">
+        <input type="text" class="form-input" id="ap-a2" placeholder="Action 2 (e.g. Advocate for structured interview questions and scoring criteria)" style="margin-bottom:8px;">
+        <input type="text" class="form-input" id="ap-a3" placeholder="Action 3 (e.g. Request gender-disaggregated promotion data from HR)">
+      </div>
+      <div class="form-group">
+        <label class="form-label">How I will apply the ECCSR framework to these actions:</label>
+        <textarea class="form-textarea" id="ap-eccsr" placeholder="E - Ethical: ...\nC - Collaboration: ...\nC - Creating: ...\nS - Sustainable: ...\nR - Results: ..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">SDG alignment, this action plan primarily advances:</label>
+        <select class="form-select" id="ap-sdg">
+          <option>SDG 5.1, End discrimination against women</option>
+          <option>SDG 5.5, Equal participation in leadership</option>
+          <option>SDG 16.6, Accountable institutions</option>
+          <option>SDG 16.7, Inclusive decision-making</option>
+          <option>Multiple SDGs (describe in notes below)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">One metric I will track to measure progress:</label>
+        <input type="text" class="form-input" id="ap-kpi" placeholder="e.g. % of women on interview shortlists each quarter">
+      </div>
+      <div class="form-group">
+        <label class="form-label">I will review this action plan on:</label>
+        <input type="date" class="form-input" id="ap-date">
+      </div>
+      <button class="btn-primary" onclick="saveActionPlan()" style="margin-top:8px;">💾 Save &amp; Generate Plan</button>
+    </div>
+    <div id="ap-output" style="display:none; margin-top:24px; padding:24px; background:var(--gray-50); border-radius:var(--radius); border:1px solid var(--gray-200);">
+      <p style="font-size:14px; color:var(--success); font-weight:600;">✓ Action Plan saved. Copy the text below or print this page.</p>
+      <div id="ap-text" style="font-size:13px; white-space:pre-wrap; color:var(--gray-800); margin-top:12px; line-height:1.8;"></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;m5&#39;)">← Group Project</button>
+    <button class="section-nav-btn next-btn" onclick="goTo(&#39;final&#39;)">Final Assessment →</button>
+  </div>
+</section>
+
+<!-- ====== FINAL ASSESSMENT ====== -->
+<section id="sec-final" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Post-Course Assessment</div>
+    <h2 class="section-title">Final Knowledge Assessment</h2>
+    <p class="section-subtitle">10 questions covering all five modules. Score 70% or above (7/10) to receive your certificate of completion.</p>
+  </div>
+  <div class="timing-chip">⏱ 10 minutes · 10 questions · 70% pass mark</div>
+
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h3>Final Assessment, All Modules</h3>
+      <p>Complete all questions. You must score 70% or above to unlock your certificate.</p>
+    </div>
+    <div class="quiz-body" id="final-body">
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q1</div>
+        <h4>Implicit bias differs from explicit prejudice primarily because it:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> Only affects people who have had no diversity training</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> Operates unconsciously and influences decisions even when it contradicts a person's stated values</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> Is limited to hiring decisions and does not affect promotion or pay</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> Can be permanently eliminated through a single awareness training session</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q2</div>
+        <h4>The "double bind" faced by women in leadership roles means they are penalised for:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> Having more qualifications than male candidates at the same level</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> Applying for roles before they have sufficient experience</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> Either conforming to gender norms and being seen as weak, or defying them and being seen as unlikeable</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> Requesting flexible working or part-time arrangements</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="a">
+        <div class="quiz-q-num">Q3</div>
+        <h4>The "broken rung" refers to:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> The disproportionate underpromotion of women at the first step from individual contributor to manager, which compounds throughout the pipeline</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> The glass ceiling that prevents women from entering the C-suite</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> A broken HR process that incorrectly records promotion decisions</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> The gap between women's qualifications and those required for senior roles</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="d">
+        <div class="quiz-q-num">Q4</div>
+        <h4>Structural bias differs from individual bias in that it:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> Only occurs in large multinational companies</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> Requires intentional discrimination by at least one senior decision-maker</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> Is easier to identify because it produces visible, documented outcomes</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> Is embedded in the rules, processes, and informal norms of an organisation and can produce unequal outcomes even without any individual acting with prejudice</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q5</div>
+        <h4>Why does removing names and personal identifiers from CVs before screening reduce bias in hiring?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> It makes CVs shorter and easier to read quickly</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> It prevents evaluators from forming unconscious associations based on name or demographic markers before assessing the candidate's actual qualifications</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> It is a legal requirement under GDPR in all EU member states</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> It increases the number of applications received from male candidates</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q6</div>
+        <h4>In a structured interview, why must panel members score candidates independently before discussing their assessments?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> To speed up the overall hiring process and reduce cost per hire</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> Because employment law in Ireland requires it for all roles above manager level</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> To prevent the most senior person's view from anchoring the group, which would suppress independent judgement and allow bias to dominate</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> To ensure each panel member takes equal responsibility for the final hiring decision</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="a">
+        <div class="quiz-q-num">Q7</div>
+        <h4>The "Potential Penalty" describes the situation where:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> Women receive higher scores for proven past performance but are systematically rated lower on subjective "future potential," disadvantaging them in promotion decisions</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> Female candidates are penalised for applying for roles above their current grade</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> Women are rated lower on both past performance and future potential at every career stage</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> Promotion panels reward confidence and self-advocacy equally for men and women</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="d">
+        <div class="quiz-q-num">Q8</div>
+        <h4>What is the key difference between a mentor and a sponsor in the context of career progression?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> Mentors are assigned formally by HR while sponsors are always self-selected</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> Mentors are senior to the employee while sponsors are typically peers</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> Mentors focus on technical skills while sponsors focus on personal development</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> A mentor advises you, while a sponsor actively advocates for you in rooms you are not in and puts their own credibility behind your name</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="b">
+        <div class="quiz-q-num">Q9</div>
+        <h4>Mandatory gender pay gap reporting works primarily because:</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> It automatically closes the pay gap once data is published</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> The act of measuring and publicly reporting a gap creates accountability pressure that changes organisational behaviour, even before any remediation plan is implemented</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> It allows employees to individually negotiate pay corrections with their line managers</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> It gives regulators the power to fine companies immediately for any gap above zero</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <div class="quiz-q-num">Q10</div>
+        <h4>Which of the following best describes what it means to address gender bias at the institutional level rather than just the individual level?</h4>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">A</div> Running annual unconscious bias awareness sessions for all employees</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">B</div> Asking individual managers to reflect on their personal attitudes toward gender</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">C</div> Changing the structures, criteria, processes, and accountability mechanisms that shape decisions, so that fair outcomes do not depend on each individual being free of bias</div>
+        <div class="quiz-option" onclick="selectOption(this,&#39;final&#39;)"><div class="quiz-option-marker">D</div> Increasing the number of women hired at entry level until parity is reached</div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="submitFinal()">Submit Final Assessment</button>
+      <div class="quiz-score-box" id="final-score"></div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;action&#39;)">← Action Plan</button>
+    <button class="section-nav-btn next-btn" id="cert-btn" onclick="goTo(&#39;cert&#39;)" style="display:none;">View Certificate →</button>
+  </div>
+</section>
+
+<!-- ====== CERTIFICATE ====== -->
+<section id="sec-cert" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Course Completion</div>
+    <h2 class="section-title">Certificate of Completion</h2>
+    <p class="section-subtitle">Congratulations on completing the course. Your certificate is generated below.</p>
+  </div>
+
+  <div class="certificate-box">
+    <div class="cert-ornament">🏅</div>
+    <div class="cert-title">Certificate of Completion</div>
+    <div class="cert-main">This is to certify that</div>
+    <div class="cert-name-line" id="cert-name">Your Name</div>
+    <div class="cert-for">has successfully completed</div>
+    <div class="cert-course-name">Gender Equality in Hiring &amp; Promotion</div>
+    <div class="cert-for">Score achieved: <strong id="cert-score">, </strong> · Pass mark: 70%</div>
+    <div class="cert-badges">
+      <div class="cert-badge-item">
+        <span style="font-size:20px;">⚖️</span>
+        <strong>SDG 5: Gender Equality</strong>
+      </div>
+      <div class="cert-badge-item">
+        <span style="font-size:20px;">🏛️</span>
+        <strong>SDG 16: Strong Institutions</strong>
+      </div>
+      <div class="cert-badge-item">
+        <span style="font-size:20px;">🔷</span>
+        <strong>ECCSR Framework</strong>
+      </div>
+    </div>
+    <div style="font-size:12px; color:var(--gray-400); margin-top:16px;" id="cert-date">Issued:,</div>
+    <div style="margin-top:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <button class="btn-primary" onclick="printCert()">🖨 Print Certificate</button>
+
+    </div>
+  </div>
+
+  <!-- Course summary -->
+  <div class="card" style="margin-top:32px;">
+    <h3 style="font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size:18px; color:var(--navy); margin-bottom:12px;">What You Covered</h3>
+    <ul class="outcomes-list">
+      <li><span class="outcome-check">✓</span> <strong>Module 1:</strong> Implicit Bias Theory, IAT, Social Role Theory, Institutional Theory, Moss-Racusin (2012)</li>
+      <li><span class="outcome-check">✓</span> <strong>Module 2:</strong> The leaking pipeline, the broken rung, bias hotspots across the talent process, Goldman Sachs context</li>
+      <li><span class="outcome-check">✓</span> <strong>Module 3:</strong> Blind recruitment, structured interviews, pay transparency, diverse panels, representation targets, ECCSR framework</li>
+      <li><span class="outcome-check">✓</span> <strong>Module 4:</strong> KPI framework, representation audit cycle, SDG alignment, business case evidence</li>
+      <li><span class="outcome-check">✓</span> <strong>Module 5:</strong> Goldman Sachs consultancy simulation, ECCSR analysis, group deliverables</li>
+    </ul>
+  </div>
+
+  <div class="finding-box" style="margin-top:24px;">
+    <h4>📚 Key References</h4>
+    <ul style="font-size:13px; line-height:2;">
+      <li>Acker, J. (1990). Hierarchies, Jobs, Bodies: A Theory of Gendered Organisations. <em>Gender &amp; Society, 4(2)</em>, 139–158.</li>
+      <li>Eagly, A.H. (1987). <em>Sex Differences in Social Behavior: A Social-Role Interpretation.</em> Lawrence Erlbaum.</li>
+      <li>Gaucher, D., Friesen, J. &amp; Kay, A.C. (2011). Evidence That Gendered Wording in Job Advertisements Exists and Sustains Gender Inequality. <em>Journal of Personality and Social Psychology, 101(1)</em>, 109–128.</li>
+      <li>Goldin, C. &amp; Rouse, C. (2000). Orchestrating Impartiality: The Impact of "Blind" Auditions on Female Musicians. <em>American Economic Review, 90(4)</em>, 715–741.</li>
+      <li>Greenwald, A.G., McGhee, D.E. &amp; Schwartz, J.L.K. (1998). Measuring Individual Differences in Implicit Cognition: The Implicit Association Test. <em>Journal of Personality and Social Psychology, 74(6)</em>, 1464–1480.</li>
+      <li>Houghton, J. (2022). <em>Project Management Made Easy: The ECCSR Approach.</em> Amazon.</li>
+      <li>McKinsey &amp; LeanIn.org (2023). <em>Women in the Workplace 2023.</em> McKinsey &amp; Company.</li>
+      <li>Moss-Racusin, C.A. et al. (2012). Science Faculty's Subtle Gender Biases Favor Male Students. <em>PNAS, 109(41)</em>, 16474–16479.</li>
+      <li>Schmidt, F.L. &amp; Hunter, J.E. (1998). The Validity and Utility of Selection Methods in Personnel Psychology. <em>Psychological Bulletin, 124(2)</em>, 262–274.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ====== REFERENCES ====== -->
+<section id="sec-refs" class="course-section">
+  <div class="section-header">
+    <div class="section-eyebrow">Academic Sources</div>
+    <h2 class="section-title">References</h2>
+    <p class="section-subtitle">All studies, reports, and sources cited throughout this course, listed alphabetically.</p>
+  </div>
+
+  <div class="card">
+    <div class="finding-box">
+      <h4>&#128218; Full Reference List</h4>
+      <ul style="font-size:13.5px; line-height:2.2; padding-left:0; list-style:none;">
+        <li>Acker, J. (1990). Hierarchies, jobs, bodies: A theory of gendered organisations. <em>Gender and Society, 4</em>(2), 139-158.</li>
+        <li>Barron, L.A. et al. (2024). Explicit and implicit discrimination in hiring. <em>Management Science</em>. [Advance online publication].</li>
+        <li>Behavioural Insights Team (2021). <em>Evaluating the effectiveness of an intervention to reduce gender bias in performance reviews.</em> Available at: https://www.bi.team</li>
+        <li>Beloskar, V.D., Haldar, A. and Gupta, S. (2023). SDG 5 in business and management: A bibliometric review. <em>Journal of Business Research, 163.</em></li>
+        <li>Benson, A., Li, D. and Shue, K. (2023). "Potential" and the gender promotion gap. <em>SSRN Working Paper.</em> Available at: https://papers.ssrn.com</li>
+        <li>Benson, A., Li, D. and Shue, K. (2024). Promotions and the gender gap in evaluation of potential. <em>NBER Working Paper Series</em> (No. w29565). National Bureau of Economic Research.</li>
+        <li>Biernat, M. and Fuegen, K. (2001). Shifting standards and the evaluation of competence. <em>Journal of Social Issues, 57</em>(4), 707-724.</li>
+        <li>Blau, F.D. and Kahn, L.M. (2017). The gender wage gap: Extent, trends, and explanations. <em>Journal of Economic Literature, 55</em>(3), 789-865.</li>
+        <li>Bohnet, I., van Geen, A. and Bazerman, M.H. (2016). When performance trumps gender bias: Joint versus separate evaluation. <em>Management Science, 62</em>(5), 1225-1234.</li>
+        <li>Bowles, H.R., Babcock, L. and Lai, L. (2007). Social incentives for gender differences in the propensity to initiate negotiations. <em>Organizational Behavior and Human Decision Processes, 103</em>(1), 84-97.</li>
+        <li>Castilla, E.J. and Benard, S. (2010). The paradox of meritocracy in organizations. <em>Administrative Science Quarterly, 55</em>(4), 543-676.</li>
+        <li>Chamorro-Premuzic, T. (2013). Why do so many incompetent men become leaders? <em>Harvard Business Review.</em> Available at: https://hbr.org</li>
+        <li>Deloitte Insights (2022). <em>The Deloitte global 2022 Millennial and Gen Z survey.</em> Deloitte.</li>
+        <li>DiMaggio, P.J. and Powell, W.W. (1983). The iron cage revisited: Institutional isomorphism and collective rationality in organizational fields. <em>American Sociological Review, 48</em>(2), 147-160.</li>
+        <li>Eagly, A.H. and Karau, S.J. (2002). Role congruity theory of prejudice toward female leaders. <em>Psychological Review, 109</em>(3), 573-598.</li>
+        <li>Eagly, A.H. and Wood, W. (1999). The origins of sex differences in human behavior. <em>American Psychologist, 54</em>(6), 408-423.</li>
+        <li>Equal Employment Opportunity Commission (EEOC) (1978). <em>Uniform guidelines on employee selection procedures.</em> 29 C.F.R. Part 1607. US Government.</li>
+        <li>European Union (2023). <em>Pay Transparency Directive.</em> Official Journal of the European Union.</li>
+        <li>Exley, C.L. and Kessler, J.B. (2022). The gender gap in self-promotion. <em>The Quarterly Journal of Economics, 137</em>(3), 1345-1381.</li>
+        <li>Gaucher, D., Friesen, J. and Kay, A.C. (2011). Evidence that gendered wording in job advertisements exists and sustains gender inequality. <em>Journal of Personality and Social Psychology, 101</em>(1), 109-128.</li>
+        <li>Goldin, C. and Rouse, C. (2000). Orchestrating impartiality: The impact of "blind" auditions on female musicians. <em>American Economic Review, 90</em>(4), 715-741.</li>
+        <li>Greenwald, A.G. and Banaji, M.R. (1995). Implicit social cognition: Attitudes, self-esteem, and stereotypes. <em>Psychological Review, 102</em>(1), 4-27.</li>
+        <li>Greenwald, A.G., McGhee, D.E. and Schwartz, J.L.K. (1998). Measuring individual differences in implicit cognition: The Implicit Association Test. <em>Journal of Personality and Social Psychology, 74</em>(6), 1464-1480.</li>
+        <li>Groschl, S., Gabaldon, P., Hahn, T. and Kelan, E. (2025). Sponsorship in male-dominant industries. <em>Gender, Work and Organization.</em> Available at: https://onlinelibrary.wiley.com</li>
+        <li>Houghton, J. (2022). <em>Project Management Made Easy: The ECCSR Approach.</em> Amazon.</li>
+        <li>Huang, J., Mayer, E.J. and Miller, G. (2024). Gender bias in promotions. <em>Review of Financial Studies.</em></li>
+        <li>Ibarra, H., Carter, N.M. and Silva, C. (2010). Why men still get more promotions than women. <em>Harvard Business Review,</em> September. Available at: https://hbr.org</li>
+        <li>Lieff Cabraser Heimann and Bernstein (2023). Court grants final approval to historic $215 million settlement in 13-year-old gender discrimination case against Goldman Sachs. Available at: https://www.lieffcabraser.com</li>
+        <li>McKinsey and Company and LeanIn.Org (2023). <em>Women in the Workplace 2023.</em> McKinsey and Company.</li>
+        <li>McKinsey and Company and LeanIn.Org (2024). <em>Women in the Workplace 2024.</em> McKinsey and Company.</li>
+        <li>McKinsey and Company and LeanIn.Org (2025). <em>Women in the Workplace 2025.</em> McKinsey and Company.</li>
+        <li>McKinsey and Company (2023). <em>Diversity Wins: How inclusion matters.</em> McKinsey and Company.</li>
+        <li>Moss-Racusin, C.A. et al. (2012). Science faculty's subtle gender biases favor male students. <em>Proceedings of the National Academy of Sciences, 109</em>(41), 16474-16479.</li>
+        <li>Project Implicit (2023). <em>Summary of IAT data.</em> Harvard University. Available at: https://implicit.harvard.edu</li>
+        <li>PwC Ireland (2023). <em>Women in Work Index 2023.</em> PricewaterhouseCoopers.</li>
+        <li>Rivera, L.A. (2012). Hiring as cultural matching: The case of elite professional service firms. <em>American Sociological Review, 77</em>(6), 999-1022.</li>
+        <li>Rudman, L.A. and Glick, P. (2001). Prescriptive gender stereotypes and backlash toward agentic women. <em>Journal of Social Issues, 57</em>(4), 743-762.</li>
+        <li>Schmidt, F.L. and Hunter, J.E. (1998). The validity and utility of selection methods in personnel psychology. <em>Psychological Bulletin, 124</em>(2), 262-274.</li>
+        <li>Scott, W.R. (2001). <em>Institutions and Organizations.</em> 2nd edn. Sage.</li>
+        <li>Swim, J.K. and Sanna, L.J. (1996). He's skilled, she's lucky: A meta-analysis of observers' attributions for women's and men's successes and failures. <em>Personality and Social Psychology Bulletin, 22</em>(5), 507-519.</li>
+        <li>UK Government (2017). <em>Gender Pay Gap Reporting Regulations.</em> Equality Act 2010. HMSO.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <button class="section-nav-btn" onclick="goTo(&#39;cert&#39;)">&#8592; Certificate</button>
+    <span></span>
+  </div>
+</section>
+
+
+</div><!-- end #main -->
+
+<!-- ========= JAVASCRIPT ========= -->
+<script>
+// ===== NAVIGATION =====
+const sections = ['intro','m1','m1quiz','m2','m2quiz','m3','m3quiz','m4','m4quiz','m5','action','final','cert','refs'];
+let visitedSections = new Set(['intro']);
+let moduleScores = {};
+let learnerName = '';
+
+function goTo(id) {
+  sections.forEach(s => {
+    document.getElementById('sec-'+s).classList.remove('active');
+    const nav = document.getElementById('nav-'+s);
+    if (nav) nav.classList.remove('active');
+  });
+  document.getElementById('sec-'+id).classList.add('active');
+  const nav = document.getElementById('nav-'+id);
+  if (nav) { nav.classList.add('active'); nav.classList.remove('locked'); }
+  visitedSections.add(id);
+  updateProgress();
+  window.scrollTo(0,0);
+  closeSidebar();
+}
+
+function updateProgress() {
+  const pct = Math.round((visitedSections.size / sections.length) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-pct').textContent = pct + '%';
+  visitedSections.forEach(s => {
+    const nav = document.getElementById('nav-'+s);
+    if (nav && !nav.classList.contains('active')) nav.classList.add('completed');
+  });
+}
+
+// ===== SIDEBAR MOBILE =====
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebar-overlay').classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('show');
+}
+
+// ===== ACCORDION =====
+function toggleAccordion(header) {
+  const body = header.nextElementSibling;
+  const allHeaders = document.querySelectorAll('.accordion-header');
+  allHeaders.forEach(h => {
+    if (h !== header) {
+      h.classList.remove('open');
+      h.nextElementSibling.classList.remove('open');
+    }
+  });
+  header.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+// ===== QUIZ =====
+function selectOption(el, quizId) {
+  const question = el.closest('.quiz-question');
+  const options = question.querySelectorAll('.quiz-option');
+  options.forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+const feedbackMap = {
+  'diag': {
+    0: {b: "Correct! The IAT measures unconscious category-attribute associations via reaction time differences - not explicit statements.", default: "Not quite. The IAT specifically measures the speed of automatic associations between concepts (e.g. male–career) revealing unconscious bias."},
+    1: {a: "Correct! The study found that the CV labelled 'Jennifer' received lower ratings and a $3,730 lower salary offer than the identical CV labelled 'John'.", default: "Not quite. Moss-Racusin found the female-named CV was rated as less competent and offered a lower salary, despite identical content."},
+    2: {c: "Correct! SDG 5 on Gender Equality explicitly calls for equal opportunity in leadership, economic participation, and an end to discrimination.", default: "Not quite. SDG 5 specifically addresses gender equality, including Target 5.5 on equal leadership opportunities."},
+    3: {b: "Correct! The glass ceiling refers to invisible structural barriers preventing women from advancing beyond mid-level management into senior leadership.", default: "Not quite. The glass ceiling is a metaphor for invisible structural barriers, not a specific policy or technology."},
+    4: {d: "Correct! Blind recruitment removes demographic identifiers (name, gender) from CVs before screening to reduce implicit bias in candidate evaluation.", default: "Not quite. Blind recruitment specifically removes identity markers to prevent bias based on demographic characteristics."},
+    5: {a: "Correct! McKinsey's research identified the 'broken rung', the first promotion to manager - as the most critical drop-off point for women.", default: "Not quite. McKinsey's 'broken rung' research found the first manager promotion is where the gap is greatest, not the C-suite."},
+    6: {c: "Correct! Eagly's Social Role Theory argues that societal expectations prescribe different traits for men and women, creating a double bind that penalises women for either conforming or defying their gender role.", default: "Not quite. Social Role Theory focuses on societal expectations and role prescriptions - not biological differences or individual choices."},
+    7: {b: "Correct! The ECCSR framework (Ethical, Collaboration, Creating, Sustainable, Results) ensures decisions align with societal values and can withstand external scrutiny.", default: "Not quite. ECCSR was designed by Houghton as a values-alignment framework for project teams, covering five dimensions from ethical to results."}
+  }
+};
+
+function submitQuiz(quizId, moduleKey) {
+  const body = document.getElementById(quizId+'-body');
+  const questions = body.querySelectorAll('.quiz-question');
+  let correct = 0;
+  let allAnswered = true;
+
+  questions.forEach((q, idx) => {
+    const selected = q.querySelector('.quiz-option.selected');
+    if (!selected) { allAnswered = false; return; }
+    const correctLetter = q.dataset.correct;
+    const options = q.querySelectorAll('.quiz-option');
+    const letters = ['a','b','c','d'];
+    const selectedIdx = Array.from(options).indexOf(selected);
+    const selectedLetter = letters[selectedIdx];
+    const feedback = q.querySelector('.quiz-feedback');
+
+    options.forEach(o => o.style.pointerEvents = 'none');
+
+    if (selectedLetter === correctLetter) {
+      selected.classList.add('correct');
+      correct++;
+      feedback.className = 'quiz-feedback show correct-fb';
+      const fbData = feedbackMap[quizId] && feedbackMap[quizId][idx];
+      feedback.textContent = '✓ ' + (fbData ? (fbData[correctLetter] || 'Correct!') : 'Correct!');
+    } else {
+      selected.classList.add('wrong');
+      const correctOption = options[letters.indexOf(correctLetter)];
+      if (correctOption) correctOption.classList.add('correct');
+      feedback.className = 'quiz-feedback show wrong-fb';
+      const fbData = feedbackMap[quizId] && feedbackMap[quizId][idx];
+      feedback.textContent = '✗ ' + (fbData ? (fbData.default || 'Incorrect. Review the module content.') : 'Incorrect. Please review the module content.');
+    }
+  });
+
+  if (!allAnswered) {
+    alert('Please answer all questions before submitting.');
+    return;
+  }
+
+  const total = questions.length;
+  const pct = Math.round((correct / total) * 100);
+  moduleScores[moduleKey] = pct;
+
+  const scoreBox = document.getElementById(quizId+'-score');
+  scoreBox.className = 'quiz-score-box show';
+  scoreBox.innerHTML = `
+    <div class="quiz-score-num">${pct}%</div>
+    <div class="quiz-score-label">${correct} of ${total} correct</div>
+    <div class="quiz-score-msg ${pct >= 60 ? 'pass' : 'fail'}">
+      ${pct >= 60 ? '✓ Passed! You can proceed to the next module.' : '✗ Score below 60%. Review the module and try again.'}
+    </div>
+  `;
+
+  body.querySelector('.quiz-submit').style.display = 'none';
+}
+
+function startCourse() {
+  const name = document.getElementById('learner-name').value.trim();
+  if (!name) { alert('Please enter your name to begin.'); return; }
+  learnerName = name;
+  document.getElementById('cert-name').textContent = learnerName;
+  goTo('m1');
+}
+
+function submitFinal() {
+  const body = document.getElementById('final-body');
+  const questions = body.querySelectorAll('.quiz-question');
+  let correct = 0;
+  let allAnswered = true;
+
+  questions.forEach((q) => {
+    const selected = q.querySelector('.quiz-option.selected');
+    if (!selected) { allAnswered = false; return; }
+    const correctLetter = q.dataset.correct;
+    const options = q.querySelectorAll('.quiz-option');
+    const letters = ['a','b','c','d'];
+    const selectedIdx = Array.from(options).indexOf(selected);
+    const selectedLetter = letters[selectedIdx];
+
+    options.forEach(o => o.style.pointerEvents = 'none');
+
+    if (selectedLetter === correctLetter) {
+      selected.classList.add('correct'); correct++;
+      const fb = q.querySelector('.quiz-feedback');
+      fb.className = 'quiz-feedback show correct-fb';
+      fb.textContent = '\u2713 Correct!';
+    } else {
+      selected.classList.add('wrong');
+      const correctOption = options[letters.indexOf(correctLetter)];
+      if (correctOption) correctOption.classList.add('correct');
+      const fb = q.querySelector('.quiz-feedback');
+      fb.className = 'quiz-feedback show wrong-fb';
+      fb.textContent = '\u2717 Incorrect. Review the relevant module.';
+    }
+  });
+
+  if (!allAnswered) { alert('Please answer all 10 questions before submitting.'); return; }
+
+  const pct = Math.round((correct / 10) * 100);
+  const passed = pct >= 70;
+  const scoreBox = document.getElementById('final-score');
+  scoreBox.className = 'quiz-score-box show';
+
+  if (passed) {
+    document.getElementById('cert-name').textContent = learnerName || 'Learner';
+    document.getElementById('cert-score').textContent = pct + '%';
+    document.getElementById('cert-date').textContent = 'Issued: ' + new Date().toLocaleDateString('en-IE', {day:'numeric', month:'long', year:'numeric'});
+    scoreBox.innerHTML = '<div class="quiz-score-num">' + pct + '%</div><div class="quiz-score-label">' + correct + ' of 10 correct</div><div class="quiz-score-msg pass">\uD83C\uDFC6 Congratulations! You have passed the final assessment. Your certificate is ready.</div>';
+    body.querySelector('.quiz-submit').style.display = 'none';
+    document.getElementById('cert-btn').style.display = 'inline-flex';
+  } else {
+    scoreBox.innerHTML = '<div class="quiz-score-num">' + pct + '%</div><div class="quiz-score-label">' + correct + ' of 10 correct \u2014 you need 7 or more to pass</div><div class="quiz-score-msg fail">\u2717 You did not reach the 70% pass mark. Please review the course material. You will be returned to the start in a few seconds.</div>';
+    body.querySelector('.quiz-submit').style.display = 'none';
+    setTimeout(function() {
+      resetFinalQuiz();
+      goTo('intro');
+    }, 4000);
+  }
+}
+
+function resetFinalQuiz() {
+  const body = document.getElementById('final-body');
+  body.querySelectorAll('.quiz-option').forEach(function(o) {
+    o.classList.remove('selected','correct','wrong');
+    o.style.pointerEvents = '';
+  });
+  body.querySelectorAll('.quiz-feedback').forEach(function(fb) {
+    fb.className = 'quiz-feedback';
+    fb.textContent = '';
+  });
+  const scoreBox = document.getElementById('final-score');
+  scoreBox.className = 'quiz-score-box';
+  scoreBox.innerHTML = '';
+  const submitBtn = body.querySelector('.quiz-submit');
+  if (submitBtn) submitBtn.style.display = '';
+  document.getElementById('cert-btn').style.display = 'none';
+}
+
+// ===== ECCSR DETAIL =====
+function showEccsrDetail(key) {
+  const details = document.querySelectorAll('.eccsr-detail');
+  details.forEach(d => d.classList.remove('show'));
+  const target = document.getElementById('eccsr-'+key);
+  if (target) target.classList.add('show');
+}
+
+// ===== ACTION PLAN =====
+function saveActionPlan() {
+  const name = document.getElementById('ap-name').value || '[Name not provided]';
+  const org = document.getElementById('ap-org').value || '[Organisation not provided]';
+  const challenge = document.getElementById('ap-challenge').value || '[Not completed]';
+  const a1 = document.getElementById('ap-a1').value || '[Not completed]';
+  const a2 = document.getElementById('ap-a2').value || '[Not completed]';
+  const a3 = document.getElementById('ap-a3').value || '[Not completed]';
+  const eccsr = document.getElementById('ap-eccsr').value || '[Not completed]';
+  const sdg = document.getElementById('ap-sdg').value;
+  const kpi = document.getElementById('ap-kpi').value || '[Not completed]';
+  const reviewDate = document.getElementById('ap-date').value || '[Date not set]';
+
+  // (cert-name is set from learnerName on course start, not from action plan)
+
+  const text = `GENDER EQUALITY PERSONAL ACTION PLAN
+================================================
+Name: ${name}
+Organisation: ${org}
+Date completed: ${new Date().toLocaleDateString('en-IE')}
+
+CHALLENGE IDENTIFIED
+${challenge}
+
+THREE 90-DAY ACTIONS
+1. ${a1}
+2. ${a2}
+3. ${a3}
+
+ECCSR FRAMEWORK APPLICATION
+${eccsr}
+
+SDG ALIGNMENT
+${sdg}
+
+MEASUREMENT KPI
+${kpi}
+
+REVIEW DATE
+${reviewDate}
+
+================================================
+Completed as part of: Gender Equality in Hiring & Promotion
+BMGT43680 · UCD Michael Smurfit Graduate Business School
+ECCSR Framework © Joe Houghton 2022`;
+
+  document.getElementById('ap-text').textContent = text;
+  document.getElementById('ap-output').style.display = 'block';
+}
+
+
+// ===== MODULE QUIZ with 70% pass and Go Back button =====
+function submitModuleQuiz(quizId, moduleKey, nextModule) {
+  const body = document.getElementById(quizId+'-body');
+  const questions = body.querySelectorAll('.quiz-question');
+  let correct = 0;
+  let allAnswered = true;
+
+  questions.forEach((q, idx) => {
+    const selected = q.querySelector('.quiz-option.selected');
+    if (!selected) { allAnswered = false; return; }
+    const correctLetter = q.dataset.correct;
+    const options = q.querySelectorAll('.quiz-option');
+    const letters = ['a','b','c','d'];
+    const selectedIdx = Array.from(options).indexOf(selected);
+    const selectedLetter = letters[selectedIdx];
+    const feedback = q.querySelector('.quiz-feedback');
+
+    options.forEach(o => o.style.pointerEvents = 'none');
+
+    if (selectedLetter === correctLetter) {
+      selected.classList.add('correct');
+      correct++;
+      feedback.className = 'quiz-feedback show correct-fb';
+      feedback.textContent = '\u2713 Correct!';
+    } else {
+      selected.classList.add('wrong');
+      const correctOption = options[letters.indexOf(correctLetter)];
+      if (correctOption) correctOption.classList.add('correct');
+      feedback.className = 'quiz-feedback show wrong-fb';
+      feedback.textContent = '\u2717 Incorrect. Review the module content and try again.';
+    }
+  });
+
+  if (!allAnswered) {
+    alert('Please answer all questions before submitting.');
+    return;
+  }
+
+  const total = questions.length;
+  const pct = Math.round((correct / total) * 100);
+  const passed = pct >= 70;
+  moduleScores[moduleKey] = pct;
+
+  const scoreBox = document.getElementById(quizId+'-score');
+  scoreBox.className = 'quiz-score-box show';
+
+  if (passed) {
+    scoreBox.innerHTML = '<div class="quiz-score-num">' + pct + '%</div>' +
+      '<div class="quiz-score-label">' + correct + ' of ' + total + ' correct</div>' +
+      '<div class="quiz-score-msg pass">\u2713 Passed! You can proceed to the next module.</div>' +
+      '<button class="quiz-submit" style="margin-top:16px;background:var(--success);" onclick="goTo(\'' + nextModule + '\')">Continue to Next Module \u2192</button>';
+  } else {
+    scoreBox.innerHTML = '<div class="quiz-score-num">' + pct + '%</div>' +
+      '<div class="quiz-score-label">' + correct + ' of ' + total + ' correct - 70% required to pass</div>' +
+      '<div class="quiz-score-msg fail">\u2717 Not quite there. Review the module content and try again.</div>' +
+      '<button class="quiz-submit" style="margin-top:16px;background:var(--rose);" onclick="retakeQuiz(\'' + quizId + '\',\'' + moduleKey + '\')">\u21A9 Go Back to Module Start</button>';
+  }
+
+  body.querySelector('.quiz-submit').style.display = 'none';
+}
+
+function retakeQuiz(quizId, moduleKey) {
+  goTo(moduleKey);
+  // Reset quiz state
+  setTimeout(function() {
+    const body = document.getElementById(quizId+'-body');
+    if (!body) return;
+    const questions = body.querySelectorAll('.quiz-question');
+    questions.forEach(q => {
+      const options = q.querySelectorAll('.quiz-option');
+      options.forEach(o => {
+        o.classList.remove('selected','correct','wrong');
+        o.style.pointerEvents = 'auto';
+      });
+      const fb = q.querySelector('.quiz-feedback');
+      if (fb) { fb.className = 'quiz-feedback'; fb.textContent = ''; }
+    });
+    const scoreBox = document.getElementById(quizId+'-score');
+    if (scoreBox) { scoreBox.className = 'quiz-score-box'; scoreBox.innerHTML = ''; }
+    const submitBtn = body.querySelector('.quiz-submit');
+    if (submitBtn) submitBtn.style.display = 'block';
+  }, 300);
+}
+
+// ===== PRINT CERTIFICATE =====
+function printCert() {
+  window.print();
+}
+
+// ===== INIT =====
+updateProgress();
+</script>
+
+
+
+
+</body></html>
